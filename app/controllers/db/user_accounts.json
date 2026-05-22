@@ -1,13 +1,14 @@
 [
-    {"username": "Henrique", 
-    "password": "123456"
-    },
-    {"username": "Moura",
-     "password": "456789"
-     },
     {
-	"username":"Henrique2",
-	"password":"pass123"
+        "name": "Henrique Catharino Nunes de Mendon\u00c3\u00a7a",
+        "password": "piratass",
+        "email": "henriquecatharino7@gmail.com",
+        "gender": "male"
+    },
+    {
+        "name": "Alice",
+        "password": "piratass",
+        "email": "alice@gmail.com",
+        "gender": "female"
     }
-
 ]

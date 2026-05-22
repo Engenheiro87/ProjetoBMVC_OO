@@ -34,6 +34,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
     --primary-color:        #ff8604;
     --white-color:          #ffffff;
     --dark-color:           #171819;
+    --real-dark:            #111111;
     --about-bg-color:       #f9f9f9;
 
     --gray-color:           #909090;
@@ -62,8 +63,19 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
 
   body {
-    background: var(--white-color);
+    /* for the background image */
+    background: var(--real-dark);
+    background-image: url(../img/sign-up/bg-img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, .5);
+    background-blend-mode:darken;
+
     font-family: var(--base-font-family);
+    justify-content: center;
+    align-items: center;
   }
 
 
@@ -252,14 +264,76 @@ https://www.tooplate.com/view/2119-gymso-fitness
     padding: 5rem 0;
   }
 
+  /* ------------------------
+    SIGN UP PAGE
+  --------------------------*/
+
+
+  .sign-up-content {
+    color: var(--white-color);
+    font-family: sans-serif;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 90px;
+  }
+
+  .signup-container {
+    /* Trying to align stuff */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto;
+
+    padding: 15px;
+    border-radius: 8px;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.685);
+    background-color: rgba(0,0,0, 0.6);
+    backdrop-filter: blur(3px);
+    width: 35%;
+    max-width: 500px;
+  }
+
+  .sign-up-input {
+    /* Padding / Resizing */
+    width: 100%;
+    max-width: 600px;
+
+
+    font-family: 'Franklin Gothic Medium';
+    color: white;
+    background-color: var(--real-dark);
+    border-radius: 4px;
+    border-color: var(--primary-color);
+  }
+  
+  .signup-btn {
+    color: black;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .signup-btn:hover {
+    color: white;
+    background-color: black
+  }
+
+
 
   /*---------------------------------------
      MENU             
   -----------------------------------------*/
-
   .navbar {
     background: var(--dark-color);
     padding: 1rem;
+    height: 60px;
   }
 
   .navbar-expand-lg .navbar-nav .nav-link {
@@ -290,7 +364,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   }
 
   .navbar .social-icon li a {
-    color: var(--white-color);
+    color: var(--primary-color);
   }
 
   .navbar-toggler {
@@ -356,91 +430,6 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
   .navbar-toggler .navbar-toggler-icon::after {
     top: 8px;
-  }
-
-  /*--------------------------------------
-    PROFILE PAGE
-  --------------------------------------- */
-  .main-profile-container{
-    display:flex;
-  }
-
-  .profile-options{
-    /* padding */
-    display: flex;
-    flex-direction: column;
-    padding: 15px;
-
-    /* visuals */
-    border-right:2px solid var(--primary-color);
-  }
-
-  .profile-card-container{
-    display:flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    gap: 15px;
-    border-top: 2px solid var(--primary-color);
-    padding-top: 5px;
-  }
-  
-  .profile-card{
-    /* Trying to align stuff */
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    /* background:linear-gradient(white, var(--primary-color)); */
-
-    flex-basis: 150px 200px;
-    width: 150px;
-    height: 200px;
-
-    border: 1px solid rgba(0,0,0,.3);
-    border-radius: 15px;
-    box-shadow: 0px 5px 8px rgba(0,0,0, .4);
-  }
-
-  .profile-card-title{
-    /* font */
-    font-size: medium;
-    font-weight: bold;
-    /* border-bottom: 2px solid var(--primary-color); */
-    text-indent: 5px;
-
-    /* background */
-    background-image: url(../img/sign-up/bg-img.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    /* box */
-    box-shadow: 0 5px 15px rgba(0,0,0, .7);
-    text-shadow: 0 1px 5px black;
-
-    /* aligning */
-    width: 100%;
-    margin-top: 0;
-    height: 25%;
-
-    /* outer visuals */
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
-  }
-
-  .profile-card-workout-list{    
-    width: 100%;
-    height: 90%;
-    margin-top: -35px;
-    padding-left: 5px;
-    list-style-position: inside;
-    
-  }
-
-  .profile-card-list-item{
-    font-weight: bold;
-    width: 100%;
-    font-size: 10px;
-    height: 10%;
   }
 
   /*---------------------------------------
