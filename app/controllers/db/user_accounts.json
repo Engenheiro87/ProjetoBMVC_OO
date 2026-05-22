@@ -1,14 +1,9 @@
 [
     {
-        "name": "Henrique Catharino Nunes de Mendon\u00c3\u00a7a",
+        "name": "henrique",
         "password": "piratass",
         "email": "henriquecatharino7@gmail.com",
-        "gender": "male"
-    },
-    {
-        "name": "Alice",
-        "password": "piratass",
-        "email": "alice@gmail.com",
-        "gender": "female"
+        "gender": "male",
+        "accountID": "c42e015d-d21b-48c7-8f2a-5dfd3cfc8475"
     }
 ]

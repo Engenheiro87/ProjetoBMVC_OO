@@ -23,8 +23,17 @@ class DataRecord():
     def book(self, user:UserAccount):
         self.__user_accounts.append(user);
         with open("app/controllers/db/user_accounts.json", "w", encoding="utf-8") as arquivo_json:
-            user_data = [vars(user_account) for user_account in self.__user_accounts];
+            user_data = [self.zip_data(user_account) for user_account in self.__user_accounts];
             json.dump(user_data, arquivo_json, indent=4);
+
+    def zip_data(self, user:UserAccount)->dict:
+        return {
+            "name": user.name,
+            "password": user.password,
+            "email": user.email,
+            "gender": user.gender,
+            "accountID":user.accountID,
+        };
     
     def getCurrentUser(self, session_id):
         if session_id in self.__authenticated_users:

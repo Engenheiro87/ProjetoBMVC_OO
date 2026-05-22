@@ -408,7 +408,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
     text-indent: 5px;
 
     /* background */
-    background-image: url(../img/sign-up/bg-img.jpg);
+    /* background-image: url(../img/sign-up/bg-img.jpg); */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

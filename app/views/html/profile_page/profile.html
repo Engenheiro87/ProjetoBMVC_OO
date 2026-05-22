@@ -62,8 +62,9 @@
             <div class="profile-card-container">
 
                 <!-- THE WORKOUTS -->
-                <a href="#"><div class="profile-card" style="background: linear-gradient(white, green);">
-                    <h1 class="profile-card-title" style="border-bottom: 2px solid green; color:aliceblue">Workout A</h1>
+                % for workout in workouts:
+                <a href="#"><div class="profile-card" style="--my-color: {{workout['color']}}; background: linear-gradient(white, var(--my-color));">
+                    <h1 class="profile-card-title" style="--thumb: url('{{ workout['thumb'] }}');--my-color: {{workout['color']}}; background-image: var(--thumb); border-bottom: 2px solid var(--my-color); color:aliceblue">{{workout['class']}}</h1>
                     <br>
                     <ul class="profile-card-workout-list">
                         <li class="profile-card-list-item">Workout 2</li>
@@ -72,26 +73,8 @@
                     </ul>            
                 </div>
                 </a>
-
-                <div class="profile-card" style="background: linear-gradient(white, orange);">
-                    <h1 class="profile-card-title" style="border-bottom: 2px solid orange; color:aliceblue">Workout B</h1>
-                    <br>
-                    <ul class="profile-card-workout-list">
-                        <li class="profile-card-list-item">Workout 2</li>
-                        <li class="profile-card-list-item">Workout 3</li>
-                        <li class="profile-card-list-item">Workout 4</li>
-                    </ul>            
-                </div>
-
-                <div class="profile-card" style="background: linear-gradient(white, blue);">
-                    <h1 class="profile-card-title" style="border-bottom: 2px solid blue; color:aliceblue">Workout C</h1>
-                    <br>
-                    <ul class="profile-card-workout-list">
-                        <li class="profile-card-list-item">Workout 2</li>
-                        <li class="profile-card-list-item">Workout 3</li>
-                        <li class="profile-card-list-item">Workout 4</li>
-                    </ul>            
-                </div>
+                
+                % end
             </div>
         </div>
         </div>
