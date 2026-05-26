@@ -4,6 +4,41 @@
         "password": "piratass",
         "email": "henriquecatharino7@gmail.com",
         "gender": "male",
-        "accountID": "c42e015d-d21b-48c7-8f2a-5dfd3cfc8475"
+        "accountID": "c42e015d-d21b-48c7-8f2a-5dfd3cfc8475",
+        "workouts":[
+            {
+                "workout_class":"A",
+                "creatorID":"#SYSTEM",
+                "exercises":[
+                    {
+                        "unique_id":"uniq-id",
+                        "info":{
+                            "exercise_id":"PUSH_01",
+                            "display_name":"Pushups",
+                            "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+                            "reps": 15,
+                            "rest_time": 45
+                        }
+                    }
+                ]
+            },
+
+            {
+                "workout_class":"C",
+                "creatorID":"#SYSTEM",
+                "exercises":[
+                    {
+                        "unique_id":"uniq-id2",
+                        "info":{
+                            "exercise_id":"SMITH_01",
+                            "display_name":"Agachamento Smith",
+                            "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+                            "reps": 12,
+                            "rest_time":60
+                        }
+                    }
+                ]
+            }
+        ]
     }
 ]

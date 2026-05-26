@@ -63,18 +63,25 @@
 
                 <!-- THE WORKOUTS -->
                 % for workout in workouts:
-                <a href="#"><div class="profile-card" style="--my-color: {{workout['color']}}; background: linear-gradient(white, var(--my-color));">
-                    <h1 class="profile-card-title" style="--thumb: url('{{ workout['thumb'] }}');--my-color: {{workout['color']}}; background-image: var(--thumb); border-bottom: 2px solid var(--my-color); color:aliceblue">{{workout['class']}}</h1>
+                <a href="#"><div class="profile-card" style="--my-color: {{workout.info['color']}}; background: linear-gradient(white, var(--my-color));">
+                    <h1 class="profile-card-title" style="--thumb: url('{{ workout.info['thumb'] }}');--my-color: {{workout.info['color']}}; background-image: var(--thumb); border-bottom: 2px solid var(--my-color); color:aliceblue">{{workout.info['class']}}</h1>
                     <br>
                     <ul class="profile-card-workout-list">
-                        <li class="profile-card-list-item">Workout 2</li>
-                        <li class="profile-card-list-item">Workout 3</li>
-                        <li class="profile-card-list-item">Workout 4</li>
-                    </ul>            
+                        % for exercise in workout.exercises:
+                        <li class="profile-card-list-item">{{exercise.display_name}}</li>
+                        % end
+                    </ul>
                 </div>
                 </a>
-                
                 % end
+
+                <a href="#">
+                    <div class="profile-add-workout">
+                        <h3 style="height: 25%; font-weight:900; font-size: 100px; color: gray;text-align: center; width: 100%; margin:25% auto;">+</h3>
+                        <h3 style="color: gray;text-align: center; width: 100%; margin:0 auto">ADD WORKOUT</h3>
+                    </div>
+                </a>
+
             </div>
         </div>
         </div>

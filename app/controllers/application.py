@@ -1,9 +1,10 @@
 from bottle import template, redirect, request;
 from app.controllers.datarecord import DataRecord;
 from colorama import init, Fore, Style
-from app.models.user_account import UserAccount;
 from uuid import uuid4;
 
+from app.models.user_account import UserAccount;
+from app.models.workout import Workout, ExerciseUser;
 
 init(autoreset=True);
 class Application():
@@ -52,25 +53,9 @@ class Application():
         print("asked to render profile");
         return template(
             "app/views/html/profile_page/profile",
-            name=user.name.capitalize(),
-            nick = user.name.split()[0],
-            workouts = [
-                {
-                    "class":"Chest/Triceps",
-                    "thumb":"https://images.pexels.com/photos/5327536/pexels-photo-5327536.jpeg?_gl=1*ki6fkp*_ga*Mzk3Mzc4MDg5LjE3Nzg4ODkwNzA.*_ga_8JE65Q40S6*czE3Nzk0NDY1ODgkbzIkZzEkdDE3Nzk0NDY2MzMkajE1JGwwJGgw",
-                    "color": "orange",
-                },
-                {
-                    "class":"Back/Biceps",
-                    "thumb":"https://images.pexels.com/photos/5327536/pexels-photo-5327536.jpeg?_gl=1*ki6fkp*_ga*Mzk3Mzc4MDg5LjE3Nzg4ODkwNzA.*_ga_8JE65Q40S6*czE3Nzk0NDY1ODgkbzIkZzEkdDE3Nzk0NDY2MzMkajE1JGwwJGgw",
-                    "color":"blue",
-                },
-                {
-                    "class":"Legs/Quadriceps",
-                    "thumb":"https://images.pexels.com/photos/5327536/pexels-photo-5327536.jpeg?_gl=1*ki6fkp*_ga*Mzk3Mzc4MDg5LjE3Nzg4ODkwNzA.*_ga_8JE65Q40S6*czE3Nzk0NDY1ODgkbzIkZzEkdDE3Nzk0NDY2MzMkajE1JGwwJGgw",
-                    "color":"green",
-                }
-            ]
+            name=str.capitalize(user.name),
+            nick = str.capitalize(user.name.split()[0]),
+            workouts = user.workouts,
         )
 
     def pagina(self, username=None):
@@ -124,4 +109,4 @@ class UserService:
     def register_user(self, **properties):
         if self.__data_model.get_user(properties["email"], properties["password"]):
             return False;
-        self.__data_model.book(UserAccount(**properties, accountID = str(uuid4())));
+        self.__data_model.book(UserAccount(properties, accountID = str(uuid4())));

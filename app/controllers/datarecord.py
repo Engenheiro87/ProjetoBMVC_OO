@@ -1,4 +1,5 @@
 from app.models.user_account import UserAccount
+from app.models.workout import ExerciseTemplate, Workout;
 import json;
 import uuid;
 
@@ -8,17 +9,42 @@ class DataRecord():
     def __init__(self):
         self.__user_accounts= [] # banco (json)
         self.__authenticated_users = {};
+
+        self.__exercises = [];
         self.read();
         
     def read(self):
         try:
-            with open("app/controllers/db/user_accounts.json", "r") as arquivo_json:
+            # READING USERS
+            with open("app/controllers/db/user_accounts.json", "r", encoding="utf-8") as arquivo_json:
                 user_data = json.load(arquivo_json)
-                self.__user_accounts = [UserAccount(**data) for data in user_data] # unpack dictionary and give as arguments for user creation.
+                self.__user_accounts = [UserAccount(self.read_user_data(data)) for data in user_data] # unpack dictionary and give as arguments for user creation.
+
+            # READING EXERCISES
+            with open("app/controllers/db/exercises.json", "r", encoding="utf-8") as exercises_json:
+                exercise_data = json.load(exercises_json);
+                self.__exercises = {data["exercise_id"]:ExerciseTemplate(data) for data in exercise_data};
+
         except FileNotFoundError:
             with open("app/controllers/db/user_accounts.json", "w", encoding="utf-8") as arquivo_json:
                 json.dump([], arquivo_json, indent=4);
             return self.read();
+
+    # EXERCISE METHODS
+    def get_exercise_template(self, exercise_id:str)->ExerciseTemplate|None:
+        return self.__exercises.get(exercise_id, None);
+
+    # USER METHODS
+
+    def read_user_data(self, data:dict)->dict:
+        treated_data = {};
+        for key, value in data.items():
+            # Exceptions
+            if key == "workouts":
+                treated_data.update({"workouts":[Workout(**workout_data) for workout_data in data["workouts"]]})
+                continue;
+            treated_data[key] = value;
+        return treated_data;
     
     def book(self, user:UserAccount):
         self.__user_accounts.append(user);
@@ -27,12 +53,16 @@ class DataRecord():
             json.dump(user_data, arquivo_json, indent=4);
 
     def zip_data(self, user:UserAccount)->dict:
+        """
+        Takes care of how the user's data will be saved (allowing the creation of private attributes)
+        """
         return {
             "name": user.name,
             "password": user.password,
             "email": user.email,
             "gender": user.gender,
             "accountID":user.accountID,
+            "workouts":user.workouts,
         };
     
     def getCurrentUser(self, session_id):
