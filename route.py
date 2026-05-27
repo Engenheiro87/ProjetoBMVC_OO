@@ -40,7 +40,7 @@ def do_signup():
     gender = request.forms.get("gender");
     result = ctl.get_service("UserService").register_user(name=name, email=email, password=password, gender=gender);
     if result == False:
-        return signup(note="This user already exists, please try another combination.");
+        return signup(note="Invalid email / password.");
     ctl.do_logout();#Makes sure you're not redirected back to home in an already logged in account.
     redirect("/login");
 
@@ -55,14 +55,16 @@ def login(message=None):
 def do_login():
     email = request.forms.get("email_box");
     password = request.forms.get("password_box");
-    sucess, user_warn = ctl.do_login(email, password);
+    sucess, sessionID_warn = ctl.do_login(email, password);
     if sucess == False:
-        return login(message=user_warn);
+        return login(message=sessionID_warn);
+    response.set_cookie("sessionID", sessionID_warn, httponly=True, secure=True, max_age = 5);
     redirect("/profile");
 
 @app.route("/logout", method="GET")
 def logout():
     ctl.do_logout();
+    response.delete_cookie("sessionID");
     return redirect("/login");
 
 #PROFILE

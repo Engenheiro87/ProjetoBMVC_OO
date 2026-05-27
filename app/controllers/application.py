@@ -16,7 +16,7 @@ class Application():
             "profile":self.profile,
         };
         self.__model = DataRecord();
-        self.__LOGGED_USER = None;
+        self.__LOGGED_USER = self.get_session_id();
         self.__authenticated_users = {};
 
         self.__current_loginusername = None;
@@ -37,7 +37,7 @@ class Application():
             return content();
            
     def get_session_id(self):
-        return request.get_cookie("session_id");
+        return request.get_cookie("sessionID");
 
     # PAGES
     def home(self):
@@ -49,8 +49,9 @@ class Application():
     def login(self, note=None):
         return template("app/views/html/log_in", note=note);
 
-    def profile(self, user:UserAccount):
+    def profile(self, session_id:str):
         print("asked to render profile");
+        user = self.__authenticated_users[session_id];
         return template(
             "app/views/html/profile_page/profile",
             name=str.capitalize(user.name),
@@ -85,11 +86,15 @@ class Application():
         user:UserAccount = self.__model.get_user(email, password);
         if not user:
             return False, "No account found.";
-        self.__LOGGED_USER = user;
-        return True, user;
+        session_id = str(uuid4());
+        self.__authenticated_users[session_id] = user;
+        self.__LOGGED_USER = session_id;
+        return True, session_id;
 
     def do_logout(self):
-        print(f"logging out {self.__LOGGED_USER!=None}");
+        session_id = self.get_session_id();
+        if session_id in self.__authenticated_users:
+            self.__authenticated_users.pop(session_id);
         self.__LOGGED_USER = None;
 
     def logout_user(self):
@@ -99,8 +104,8 @@ class Application():
             self.__model.logout(session_id);
 
     @property
-    def LOGGED_USER(self)->UserAccount:
-        return self.__LOGGED_USER;
+    def LOGGED_USER(self)->str|None:
+        return self.get_session_id();
 
 class UserService:
     def __init__(self, data_model:DataRecord):
