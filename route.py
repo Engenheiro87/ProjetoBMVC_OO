@@ -1,5 +1,5 @@
 from app.controllers.application import Application
-from bottle import Bottle, route, run, request, static_file, post
+from bottle import Bottle, route, run, request, static_file, post, error, abort;
 from bottle import redirect, template, response
 from colorama import init, Fore, Style;
 
@@ -10,6 +10,11 @@ ctl = Application()
 init(autoreset=True);
 #-----------------------------------------------------------------------------
 # Rotas:
+
+# ERRORS
+@app.error(404)
+def erro_404(error):
+    return ctl.render("error_404", vars(error)["body"].replace("Not found: ", ""));
 
 @app.route('/static/<filepath:path>')
 def serve_static(filepath):
@@ -58,7 +63,7 @@ def do_login():
     sucess, sessionID_warn = ctl.do_login(email, password);
     if sucess == False:
         return login(message=sessionID_warn);
-    response.set_cookie("sessionID", sessionID_warn, httponly=True, secure=True, max_age = 5);
+    response.set_cookie("sessionID", sessionID_warn, httponly=True, secure=True, max_age = 15*60);
     redirect("/profile");
 
 @app.route("/logout", method="GET")
@@ -97,7 +102,6 @@ def logout_old():
 
 
 #-----------------------------------------------------------------------------
-
 
 if __name__ == '__main__':
 

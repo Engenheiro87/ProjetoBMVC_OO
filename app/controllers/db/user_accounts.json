@@ -22,6 +22,11 @@
                     }
                 ]
             },
+            {
+                "workout_class":"B",
+                "creatorID":"#SYSTEM",
+                "exercises":[]
+            },
 
             {
                 "workout_class":"C",

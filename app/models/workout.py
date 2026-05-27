@@ -6,17 +6,17 @@ class Workout:
     LIBRARY = {
         "A" : {
             "class": "Chest/Triceps/Abdomen",
-            "thumb":"https://images.pexels.com/photos/5327536/pexels-photo-5327536.jpeg?_gl=1*ki6fkp*_ga*Mzk3Mzc4MDg5LjE3Nzg4ODkwNzA.*_ga_8JE65Q40S6*czE3Nzk0NDY1ODgkbzIkZzEkdDE3Nzk0NDY2MzMkajE1JGwwJGgw",
+            "thumb":"https://images.pexels.com/photos/5327553/pexels-photo-5327553.jpeg",
             "color":"green",
         },
         "B" : {
             "class": "Back/Biceps/Shoulders",
-            "thumb":"https://images.pexels.com/photos/5327536/pexels-photo-5327536.jpeg?_gl=1*ki6fkp*_ga*Mzk3Mzc4MDg5LjE3Nzg4ODkwNzA.*_ga_8JE65Q40S6*czE3Nzk0NDY1ODgkbzIkZzEkdDE3Nzk0NDY2MzMkajE1JGwwJGgw",
+            "thumb":"https://images.pexels.com/photos/10440731/pexels-photo-10440731.jpeg",
             "color":"blue",
         },
         "C" : {
             "class": "Legs/Quadriceps",
-            "thumb":"https://images.pexels.com/photos/5327536/pexels-photo-5327536.jpeg?_gl=1*ki6fkp*_ga*Mzk3Mzc4MDg5LjE3Nzg4ODkwNzA.*_ga_8JE65Q40S6*czE3Nzk0NDY1ODgkbzIkZzEkdDE3Nzk0NDY2MzMkajE1JGwwJGgw",
+            "thumb":"https://images.pexels.com/photos/14673249/pexels-photo-14673249.jpeg",
             "color":"orange",
         },
     }

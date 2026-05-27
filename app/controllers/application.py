@@ -14,6 +14,7 @@ class Application():
             "signup":self.signup,
             "login":self.login,
             "profile":self.profile,
+            "error_404":self.e404,
         };
         self.__model = DataRecord();
         self.__LOGGED_USER = self.get_session_id();
@@ -40,6 +41,9 @@ class Application():
         return request.get_cookie("sessionID");
 
     # PAGES
+    def e404(self, adress):
+        return template("app/views/html/e404", adress=adress);
+
     def home(self):
         return template('app/views/html/index');
 
@@ -50,7 +54,6 @@ class Application():
         return template("app/views/html/log_in", note=note);
 
     def profile(self, session_id:str):
-        print("asked to render profile");
         user = self.__authenticated_users[session_id];
         return template(
             "app/views/html/profile_page/profile",
