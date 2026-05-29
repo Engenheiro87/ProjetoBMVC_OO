@@ -13,8 +13,10 @@ init(autoreset=True);
 
 # ERRORS
 @app.error(404)
-def erro_404(error):
-    return ctl.render("error_404", vars(error)["body"].replace("Not found: ", ""));
+@app.error(500)
+def error_page(error):
+    return ctl.render("error", parameter={"status_line":vars(error)["_status_line"], "body":vars(error)["body"]});
+
 
 @app.route('/static/<filepath:path>')
 def serve_static(filepath):
@@ -23,7 +25,7 @@ def serve_static(filepath):
 @app.route("/")
 @app.route('/home')
 def home(info=None):
-    if not ctl.LOGGED_USER:
+    if not ctl.is_authenticated():
         return redirect("/login");
     return profile();# TEMPORARY
 
@@ -52,7 +54,7 @@ def do_signup():
 #LOG IN
 @app.route("/login", method="GET")
 def login(message=None):
-    if ctl.LOGGED_USER:
+    if ctl.is_authenticated():
         return redirect("/home");
     return ctl.render("login", message);
 
@@ -74,11 +76,18 @@ def logout():
 
 #PROFILE
 @app.route("/profile", method="GET")
-def profile(user=None):
-    user = user or ctl.LOGGED_USER;
-    if user==None:
+def profile():
+    user = ctl.is_authenticated() and ctl.get_session_id();
+    if user==False:
         return redirect("/login");
     return ctl.render("profile", user);
+
+# WORKOUT CREATION
+@app.route("/workout_creation", method="GET")
+def workout_creation():
+    if not ctl.is_authenticated():
+        return redirect("/login");
+    return ctl.render("workout_creation");
 
 # OLD
 

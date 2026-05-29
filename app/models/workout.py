@@ -66,12 +66,18 @@ class Exercise(ABC):
     def reps(self, value:int):
         self.__reps = value;
 
+    @property
+    def description(self):
+        return self.__info.get("desc", "No description available.");
+
+    
+
 class ExerciseTemplate(Exercise):
     def __init__(self, info:dict):
         super().__init__(info);
 
     def get_info(self, info_name:str)->any:
-        return self.__info.get(info_name, None);
+        return self.info.get(info_name, None);
 
     def get_info_copy(self):
         return deepcopy(self.__info);

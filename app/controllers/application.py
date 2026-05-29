@@ -14,7 +14,10 @@ class Application():
             "signup":self.signup,
             "login":self.login,
             "profile":self.profile,
-            "error_404":self.e404,
+            "workout_creation":self.workout_creation,
+
+            # errors
+            "error":self.error_call,
         };
         self.__model = DataRecord();
         self.__LOGGED_USER = self.get_session_id();
@@ -41,8 +44,11 @@ class Application():
         return request.get_cookie("sessionID");
 
     # PAGES
-    def e404(self, adress):
-        return template("app/views/html/e404", adress=adress);
+    def workout_creation(self):
+        return template("app/views/html/workout_creation/work", exercise_templates=self.__model.exercise_templates.values());
+
+    def error_call(self, payload:dict):
+        return template("app/views/html/error", payload=payload);
 
     def home(self):
         return template('app/views/html/index');
@@ -72,10 +78,9 @@ class Application():
     
 
     # OTHER METHODS
-    def is_authenticated(self, username):
-        session_id = self.get_session_id();
-        current_username = self.__model.getUserName(session_id);
-        return username==current_username;
+    def is_authenticated(self, session_id=None)->bool:
+        session_id = session_id or self.get_session_id();
+        return session_id in self.__authenticated_users;
 
     def authenticate_user(self, username, password):
         session_id = self.__model.checkUser(username, password);
@@ -108,7 +113,8 @@ class Application():
 
     @property
     def LOGGED_USER(self)->str|None:
-        return self.get_session_id();
+        session_id = self.get_session_id();
+        return session_id or None;
 
 class UserService:
     def __init__(self, data_model:DataRecord):

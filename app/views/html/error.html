@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="../../static/css/tooplate-gymso-style.css">
 </head>
 <body class="e404-body">
-    <h1 style="background-color: orange; color: white; text-align: center; height: 5px; margin: 5% auto; width: 100%">Error 404: Not Found.</h1>
-    <h5 style="color: gray; font-weight: bold; text-align: center; margin: 20px auto; width: 100; font-size: smaller;">Couldn't figure "{{adress}}".</h1>
+    <h1 style="background-color: orange; color: white; text-align: center; height: 5px; margin: 5% auto; width: 100%">{{payload['status_line']}}</h1>
+    <h5 style="color: gray; font-weight: bold; text-align: center; margin: 20px auto; width: 100; font-size: smaller;">{{payload['body']}}.</h1>
     <a href="/home"><button class="e404-home-button" style="margin-top: 200px;">HOME</button></a>
 </body>
 </html>

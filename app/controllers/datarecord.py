@@ -10,7 +10,7 @@ class DataRecord():
         self.__user_accounts= [] # banco (json)
         self.__authenticated_users = {};
 
-        self.__exercises = [];
+        self.__exercises = {};
         self.read();
         
     def read(self):
@@ -33,6 +33,10 @@ class DataRecord():
     # EXERCISE METHODS
     def get_exercise_template(self, exercise_id:str)->ExerciseTemplate|None:
         return self.__exercises.get(exercise_id, None);
+
+    @property
+    def exercise_templates(self)->dict:
+        return self.__exercises;
 
     # USER METHODS
 

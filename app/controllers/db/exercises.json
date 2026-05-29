@@ -4,7 +4,8 @@
         "display_name":"Pushups",
         "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
         "reps": 15,
-        "rest_time": 45
+        "rest_time": 45,
+        "desc":"This is a description for the pushup exercise."
     },
 
 
@@ -13,6 +14,7 @@
         "display_name":"Agachamento Smith",
         "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
         "reps": 12,
-        "rest_time": 60
+        "rest_time": 60,
+        "desc":"This is a description for the smith exercise."
     }
 ]
