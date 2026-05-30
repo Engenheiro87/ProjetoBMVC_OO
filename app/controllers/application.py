@@ -28,6 +28,7 @@ class Application():
     
         self.services = {
             "UserService":UserService(data_model=self.__model),
+            "WorkoutService":WorkoutService(data_model=self.__model, app=self)
         }
 
     def get_service(self, service:str):
@@ -42,6 +43,9 @@ class Application():
            
     def get_session_id(self):
         return request.get_cookie("sessionID");
+
+    def from_session_id(self, session_id:str)->UserAccount|None:
+        return self.__authenticated_users.get(session_id, None);
 
     # PAGES
     def workout_creation(self):
@@ -123,4 +127,51 @@ class UserService:
     def register_user(self, **properties):
         if self.__data_model.get_user(properties["email"], properties["password"]):
             return False;
-        self.__data_model.book(UserAccount(properties, accountID = str(uuid4())));
+        self.__data_model.book(UserAccount(properties));
+
+class WorkoutService():
+    def __init__(self, data_model:DataRecord, app:Application):
+        self.__data_model = data_model;
+        self.__app = app;
+
+    def create_workout(self, session_id:str, payload:dict):
+        user = self.__app.from_session_id(session_id);
+        if not user:
+            return False, "Couldn't find this user.";
+        if not payload:
+            return False, "No payload sent.";
+        workout_class = self.get_class_from_json(payload["exercises"]);
+        workout = self.__data_model.create_workout_from_json(
+            {
+                "workout_class":workout_class,
+                "creatorID":user.accountID,
+                "exercises": self.parse_exercise_list(payload["exercises"]),
+            }
+        );
+        user.add_workout(workout);
+        self.__data_model.save();
+        return True, None;
+    
+    def parse_exercise_list(self, exercise_dict:dict)->list:
+        """
+        Transforms from JavaScript JSON into user_accounts JSON format.
+        """
+        return [{
+            "unique_id": exercise_data.get("unique_id", str(uuid4())),
+            "exercise_id":exercise_id,
+            "info": {
+                "reps":exercise_data.get("reps", 12),
+            },
+        } for exercise_id, exercise_data in exercise_dict.items()
+        ];
+
+    def get_class_from_json(self, json_exercises:dict)->str:
+        last_type = None;
+        for exercise in json_exercises.values():
+            my_type = exercise["exercise_type"];
+            if not last_type:
+                last_type = my_type;
+                continue;
+            if my_type!=last_type:
+                return "M";
+        return last_type;

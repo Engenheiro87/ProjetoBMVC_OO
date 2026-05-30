@@ -19,12 +19,27 @@ class Workout:
             "thumb":"https://images.pexels.com/photos/14673249/pexels-photo-14673249.jpeg",
             "color":"orange",
         },
+        "M":{
+            "class": "Mixed",
+            "thumb":"https://images.pexels.com/photos/5878683/pexels-photo-5878683.jpeg",
+            "color":"red",
+        }
     }
     def __init__(self, workout_class:str, creatorID:str, exercises:list):
         self.workout_class = workout_class;
         self.info = Workout.LIBRARY.get(workout_class);
         self.__creatorID = creatorID;
-        self.__exercises = [ExerciseUser(**exercise_data) for exercise_data in exercises];
+        self.__exercises = exercises;
+    
+    def __str__(self):
+        return f"""
+Workout Class: {self.workout_class};
+Class: {self.info["class"]};
+CreatorID: {self.creatorID};
+Exercises: {self.exercises};
+Exercise1: {self.exercises[0]}
+
+"""
 
     @property
     def creatorID(self)->str:
@@ -39,6 +54,14 @@ class Workout:
             if exercise.unique_id == uniqueID:
                 return exercise;
 
+    def pack(self)->dict:
+        return {
+            "workout_class":self.workout_class,
+            "creatorID":self.__creatorID,
+            "exercises":[exercise.pack() for exercise in self.__exercises],
+        };
+
+
 class Exercise(ABC):
     def __init__(self, info:dict):
         self.display_name = info["display_name"] or "Untitled Exercise";
@@ -46,9 +69,21 @@ class Exercise(ABC):
         self.__reps = info["reps"];
         self.__info = deepcopy(info);
     
+    def __str__(self):
+        return f"""
+Exercise: {self.display_name};
+ExerciseID = {self.exercise_id};
+Reps: {self.reps};
+Info: {self.info};
+"""
+    
     @property
     def info(self):
         return self.__info;
+
+    @property
+    def exercise_type(self):
+        return self.__info.get("exercise_type", "UD");
 
     @property
     def exercise_id(self):
@@ -80,10 +115,13 @@ class ExerciseTemplate(Exercise):
         return self.info.get(info_name, None);
 
     def get_info_copy(self):
-        return deepcopy(self.__info);
+        return deepcopy(self.info);
 
 class ExerciseUser(Exercise):
-    def __init__(self, info:dict, unique_id:str):
+    def __init__(self, info:dict, unique_id:str, custom_info=None):
+        if custom_info:
+            for key, value in custom_info.items():
+                info[key]=value;
         super().__init__(info);
         self.__unique_id = unique_id;
     
@@ -96,7 +134,16 @@ class ExerciseUser(Exercise):
 
     def set_reps(self, new_value:int):
         self.reps = new_value;
+    
+    def pack(self)->dict:
+        return {
+            "unique_id":self.__unique_id,
+            "exercise_id":self.exercise_id,
+            "info":{
+                "reps":self.reps,
+            },
+        };
 
     @classmethod
-    def from_template(cls, template:ExerciseTemplate, uniqueID:str)->ExerciseUser:
-        return cls(template.get_info_copy(), uniqueID);
+    def from_template(cls, template:ExerciseTemplate, uniqueID:str, custom_info:dict=None)->ExerciseUser:
+        return cls(template.get_info_copy(), uniqueID, custom_info);

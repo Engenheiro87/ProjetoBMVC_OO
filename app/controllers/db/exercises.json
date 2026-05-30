@@ -1,6 +1,7 @@
 [
     {
         "exercise_id" : "PUSH_01",
+        "exercise_type":"A",
         "display_name":"Pushups",
         "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
         "reps": 15,
@@ -11,6 +12,7 @@
 
     {
         "exercise_id" : "SMITH_01",
+        "exercise_type":"C",
         "display_name":"Agachamento Smith",
         "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
         "reps": 12,

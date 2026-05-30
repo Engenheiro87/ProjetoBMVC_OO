@@ -62,15 +62,17 @@
             <p class="wc-exercise-div-desc">{{exercise.description}}</p>
 
             <div class="wc-exercise-bottom-row">
-                <button data-type="select" data-exercise-id="{{exercise.exercise_id}}" class="wc-exercise-div-btn"></button>
-                <button data-type="plus" data-exercise-id="{{exercise.exercise_id}}" class="wc-exercise-div-btn" style="background-color: gray; border-color: darkgray;">+</button>
-                <span id="REPS_{{exercise.exercise_id}}" data-exercise-id="{{exercise.exercise_id}}">{{exercise.reps}} reps</span>
+                <!-- EXERCISE SELECTOR -->
+                <button data-type="select" data-exercise-id="{{exercise.exercise_id}}" data-exercise-type="{{exercise.exercise_type}}" class="wc-exercise-div-btn"></button>
                 <button data-type="minus" data-exercise-id="{{exercise.exercise_id}}" class="wc-exercise-div-btn" style="background-color: gray; border-color: darkgray;">-</button>
+                <span id="REPS_{{exercise.exercise_id}}" data-exercise-id="{{exercise.exercise_id}}">-</span>
+                <button data-type="plus" data-exercise-id="{{exercise.exercise_id}}" class="wc-exercise-div-btn" style="background-color: gray; border-color: darkgray;">+</button>
             
             </div>
         </div>
         % end
     </div>
+    <button class="wc-exercise-submit">CREATE (0)</button>
 
     <script src="../../../static/js/workout_creation/work.js"></script>
     </body>

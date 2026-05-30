@@ -1,45 +1,40 @@
 [
     {
-        "name": "henrique",
+        "name": "Henrique",
         "password": "piratass",
         "email": "henriquecatharino7@gmail.com",
         "gender": "male",
-        "accountID": "c42e015d-d21b-48c7-8f2a-5dfd3cfc8475",
-        "workouts":[
+        "accountID": "29c22196-8e72-4caa-b96a-7d54376e12d8",
+        "workouts": [
             {
-                "workout_class":"A",
-                "creatorID":"#SYSTEM",
-                "exercises":[
+                "workout_class": "M",
+                "creatorID": "29c22196-8e72-4caa-b96a-7d54376e12d8",
+                "exercises": [
                     {
-                        "unique_id":"uniq-id",
-                        "info":{
-                            "exercise_id":"PUSH_01",
-                            "display_name":"Pushups",
-                            "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
-                            "reps": 15,
-                            "rest_time": 45
+                        "unique_id": "c6ffa877-b557-4f2e-836f-3daf475469a6",
+                        "exercise_id": "PUSH_01",
+                        "info": {
+                            "reps": 20
+                        }
+                    },
+                    {
+                        "unique_id": "cfeda643-459d-444d-9ada-85f6e14c4aa8",
+                        "exercise_id": "SMITH_01",
+                        "info": {
+                            "reps": 10
                         }
                     }
                 ]
             },
             {
-                "workout_class":"B",
-                "creatorID":"#SYSTEM",
-                "exercises":[]
-            },
-
-            {
-                "workout_class":"C",
-                "creatorID":"#SYSTEM",
-                "exercises":[
+                "workout_class": "A",
+                "creatorID": "29c22196-8e72-4caa-b96a-7d54376e12d8",
+                "exercises": [
                     {
-                        "unique_id":"uniq-id2",
-                        "info":{
-                            "exercise_id":"SMITH_01",
-                            "display_name":"Agachamento Smith",
-                            "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
-                            "reps": 12,
-                            "rest_time":60
+                        "unique_id": "747586f5-bb6c-4314-bced-96888600232d",
+                        "exercise_id": "PUSH_01",
+                        "info": {
+                            "reps": 15
                         }
                     }
                 ]

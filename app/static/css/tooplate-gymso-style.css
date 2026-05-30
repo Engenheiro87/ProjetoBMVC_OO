@@ -491,10 +491,9 @@ https://www.tooplate.com/view/2119-gymso-fitness
     border-top: 2px solid var(--primary-color);
     padding-top: 5px;/* padding */
     width: 90%;
-    height: 800px;
+    height: auto;
     margin: 35px auto;
     gap: 15px;
-
   }
 
   .wc-exercise-div{
@@ -550,13 +549,18 @@ https://www.tooplate.com/view/2119-gymso-fitness
     justify-content: center;
 
     border-radius: 25px;
-    border: 2px solid green;
-    background-color: lightgreen;
+    border: 2px solid darkgray;
+    background-color: lightgray;
     cursor:pointer;
     font-size: large;
     font-weight: bolder;
     color: white;
     font-weight: bolder;
+  }
+
+  .wc-exercise-div-btn.selected {
+    border: 2px solid green;
+    background-color: lightgreen;
   }
 
   .wc-exercise-bottom-row{
@@ -569,6 +573,24 @@ https://www.tooplate.com/view/2119-gymso-fitness
     height: 19%;
     width: 100%;
   }
+
+  .wc-exercise-submit{
+    /* padding */
+    margin-left: 35px;
+    margin-top: 5px;
+
+    /* visuals */
+    background-color: lightgray;
+    border-radius: 5px;
+    border: 0;
+    font-weight: bolder;
+    cursor:not-allowed;
+  }
+
+  .wc-exercise-submit.ready{
+    background-color: var(--primary-color);
+    cursor: pointer;
+  };
 
   /*---------------------------------------
      HERO              

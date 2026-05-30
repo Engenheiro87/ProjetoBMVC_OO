@@ -2,6 +2,7 @@ from app.controllers.application import Application
 from bottle import Bottle, route, run, request, static_file, post, error, abort;
 from bottle import redirect, template, response
 from colorama import init, Fore, Style;
+from uuid import uuid4;
 
 app = Bottle()
 ctl = Application()
@@ -45,7 +46,7 @@ def do_signup():
     email = request.forms.get("email_box");
     password = request.forms.get("password_box");
     gender = request.forms.get("gender");
-    result = ctl.get_service("UserService").register_user(name=name, email=email, password=password, gender=gender);
+    result = ctl.get_service("UserService").register_user(name=name, email=email, password=password, gender=gender, workouts=[], accountID=str(uuid4()));
     if result == False:
         return signup(note="Invalid email / password.");
     ctl.do_logout();#Makes sure you're not redirected back to home in an already logged in account.
@@ -89,8 +90,16 @@ def workout_creation():
         return redirect("/login");
     return ctl.render("workout_creation");
 
-# OLD
+@app.route("/create_workout", method="POST")
+def create_workout():
+    payload = request.json;
+    sucess, error = ctl.get_service("WorkoutService").create_workout(ctl.get_session_id(), payload);
+    return {
+        "sucess":sucess,
+        "error":error or None,
+    }
 
+# OLD
 @app.route("/portal", method="POST")
 def action_portal():
     username = request.forms.get("username");
