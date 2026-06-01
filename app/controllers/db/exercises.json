@@ -1,0 +1,366 @@
+[
+    {
+        "exercise_id" : "PUSH_01",
+        "exercise_type":"A",
+        "display_name":"Push-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps": 15,
+        "rest_time": 45,
+        "desc":"Classic upper-body exercise that develops chest, shoulders, and triceps using only body weight."
+    },
+
+    {
+        "exercise_id":"PUSH_02",
+        "exercise_type":"A",
+        "display_name":"Incline Push-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":15,
+        "rest_time":45,
+        "desc":"Easier variation using a bench, stair, or ledge to reduce resistance."
+    },
+    
+    {
+        "exercise_id":"PUSH_03",
+        "exercise_type":"A",
+        "display_name":"Decline Push-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":15,
+        "rest_time":45,
+        "desc":"Feet elevated on a bench or step to emphasize the upper chest and shoulders."
+    },
+
+    {
+        "exercise_id":"PUSH_04",
+        "exercise_type":"A",
+        "display_name":"Pike Push-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":15,
+        "rest_time":45,
+        "desc":"Body forms an inverted V shape, shifting focus toward the shoulders."
+    },
+
+    {
+        "exercise_id":"PUSH_05",
+        "exercise_type":"A",
+        "display_name":"Diamond Push-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":15,
+        "rest_time":45,
+        "desc":"Hands positioned close together to increase triceps and inner chest activation."
+    },  
+
+    {
+        "exercise_id":"PUSH_06",
+        "exercise_type":"A",
+        "display_name":"Wide Push-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":15,
+        "rest_time":45,
+        "desc":"Hands placed wider than shoulder width to emphasize chest engagement."
+    },
+
+    {
+        "exercise_id":"PUSH_07",
+        "exercise_type":"A",
+        "display_name":"Plank",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":3,
+        "rest_time":45,
+        "desc":"Static core exercise that develops abdominal stability and posture."
+    },
+
+    {
+        "exercise_id":"PUSH_08",
+        "exercise_type":"A",
+        "display_name":"Side Plank",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":3,
+        "rest_time":45,
+        "desc":"Targets obliques and improves lateral core strength."
+    },
+
+    {
+        "exercise_id":"PUSH_09",
+        "exercise_type":"A",
+        "display_name":"Leg Raises",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Raises both legs while lying down to strengthen the lower abdominal region."
+    },
+
+    {
+        "exercise_id":"PUSH_10",
+        "exercise_type":"A",
+        "display_name":"Mountain Climbers",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Dynamic exercise combining core activation and cardiovascular conditioning."
+    },
+
+    {
+        "exercise_id":"PUSH_11",
+        "exercise_type":"A",
+        "display_name":"Hollow Hold",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":3,
+        "rest_time":45,
+        "desc":"Gymnastics-inspired static hold that strengthens the entire abdominal wall."
+    },
+
+    {
+        "exercise_id":"PUSH_12",
+        "exercise_type":"A",
+        "display_name":"Shoulder Taps",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":3,
+        "rest_time":45,
+        "desc":"Plank variation requiring core stability while alternating shoulder touches."
+    },
+    
+
+    {
+        "exercise_id":"PULL_01",
+        "exercise_type":"B",
+        "display_name":"Pull-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":10,
+        "rest_time":45,
+        "desc":"Fundamental pulling movement targeting back, biceps, and grip strength."
+    },
+
+    {
+        "exercise_id":"PULL_02",
+        "exercise_type":"B",
+        "display_name":"Chin-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":10,
+        "rest_time":45,
+        "desc":"Pull-up variation with underhand grip, increasing biceps involvement."
+    },
+
+    
+    {
+        "exercise_id":"PULL_03",
+        "exercise_type":"B",
+        "display_name":"Australian Pull-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":10,
+        "rest_time":45,
+        "desc":"Horizontal pulling exercise using a low bar or sturdy railing."
+    },
+
+    {
+        "exercise_id":"PULL_04",
+        "exercise_type":"B",
+        "display_name":"Scapular Pull-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":10,
+        "rest_time":45,
+        "desc":"Focuses on shoulder blade control and pull-up progression."
+    },
+
+    {
+        "exercise_id":"PULL_05",
+        "exercise_type":"B",
+        "display_name":"Negative Pull-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":10,
+        "rest_time":45,
+        "desc":"Slow lowering phase of a pull-up to build strength toward full repetitions."
+    },
+
+    {
+        "exercise_id":"PULL_06",
+        "exercise_type":"B",
+        "display_name":"Commando Pull-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":10,
+        "rest_time":45,
+        "desc":"Pull-up variation performed with the body positioned sideways to the bar."
+    },
+
+    {
+        "exercise_id":"PULL_07",
+        "exercise_type":"B",
+        "display_name":"Dead Hang",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":3,
+        "rest_time":45,
+        "desc":"Simple hanging exercise that improves grip strength and shoulder mobility."
+    },
+
+    {
+        "exercise_id":"PULL_07",
+        "exercise_type":"B",
+        "display_name":"Archer Pull-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":10,
+        "rest_time":45,
+        "desc":"Advanced unilateral pulling exercise that develops back and arm strength."
+    },
+
+    {
+        "exercise_id":"PULL_08",
+        "exercise_type":"B",
+        "display_name":"Resistance Band Rows",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Portable row variation using resistance bands when available."
+    },
+
+    {
+        "exercise_id":"PULL_09",
+        "exercise_type":"B",
+        "display_name":"Face Pulls",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Strengthens rear deltoids and improves shoulder health."
+    },
+
+    {
+        "exercise_id":"PULL_10",
+        "exercise_type":"B",
+        "display_name":"Superman Hold",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":3,
+        "rest_time":45,
+        "desc":"Floor exercise targeting lower back endurance and posterior chain activation."
+    },
+
+    {
+        "exercise_id":"PULL_11",
+        "exercise_type":"B",
+        "display_name":"Reverse Snow Angels",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":10,
+        "rest_time":45,
+        "desc":"Improves upper-back control and shoulder stability without equipment."
+    },
+
+
+
+
+    {
+        "exercise_id":"LEG_01",
+        "exercise_type":"C",
+        "display_name":"Bodyweight Squats",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Fundamental lower-body exercise developing quadriceps, glutes, and balance."
+    },
+
+    {
+        "exercise_id":"LEG_02",
+        "exercise_type":"C",
+        "display_name":"Jump Squats",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Explosive squat variation that develops power and conditioning."
+    },
+
+    {
+        "exercise_id":"LEG_03",
+        "exercise_type":"C",
+        "display_name":"Walking Lunges",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Alternating lunges that improve leg strength and coordination."
+    },
+
+    {
+        "exercise_id":"LEG_04",
+        "exercise_type":"C",
+        "display_name":"Reverse Lunges",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Lunge variation placing less stress on the knees."
+    },
+
+    {
+        "exercise_id":"LEG_05",
+        "exercise_type":"C",
+        "display_name":"Bulgarian Split Squats",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Single-leg exercise using a bench or step for increased difficulty."
+    },
+    
+    {
+        "exercise_id":"LEG_06",
+        "exercise_type":"C",
+        "display_name":"Wall Sit",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Static exercise that builds quadriceps endurance and mental resilience. Mostly the second one."
+    },
+
+    {
+        "exercise_id":"LEG_07",
+        "exercise_type":"C",
+        "display_name":"Step-Ups",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":15,
+        "rest_time":45,
+        "desc":"Stepping onto a bench or stair to strengthen legs and balance."
+    },
+
+    {
+        "exercise_id":"LEG_08",
+        "exercise_type":"C",
+        "display_name":"Calf-Raises",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":15,
+        "rest_time":45,
+        "desc":"Simple exercise focused on calf development and ankle stability."
+    },
+
+    {
+        "exercise_id":"LEG_09",
+        "exercise_type":"C",
+        "display_name":"Single-Leg Squats (Assisted)",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":15,
+        "rest_time":45,
+        "desc":"Progression toward pistol squats while improving balance and strength."
+    },
+
+    {
+        "exercise_id":"LEG_10",
+        "exercise_type":"C",
+        "display_name":"Pistol Squats",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Advanced unilateral squat requiring strength, flexibility, and control."
+    },
+
+    {
+        "exercise_id":"LEG_11",
+        "exercise_type":"C",
+        "display_name":"Glute Bridges",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":3,
+        "rest_time":45,
+        "desc":"Targets glutes and hamstrings while improving hip stability."
+    },
+
+    {
+        "exercise_id":"LEG_12",
+        "exercise_type":"C",
+        "display_name":"Broad Jumps",
+        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "reps":12,
+        "rest_time":45,
+        "desc":"Explosive lower-body movement developing power and athleticism."
+    }
+]

@@ -13,6 +13,13 @@
 
         <label for="password">Senha:</label>
         <input id="password" name="password" type="password" required /><br>
+
+        % if message:
+            <div id="flash-message" style="background: #ffffff; padding: 10px; border: 1px solid #cc2d2d;">
+                {{message}}
+            </div>
+        %end
+
         <input value="Login" type="submit" />
     </form>
     <form action="/logout" method="post">

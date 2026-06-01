@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFit - Create Workout</title>
+
+    <link rel="icon" type="image/png" href="../../../static/img/unifit_icon.png">;
+
+    <link rel="stylesheet" href="../../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../static/css/aos.css">
+    
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="../../../static/css/tooplate-gymso-style.css">
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+
+            <img src="../../../static/img/unifit_icon.png" width="45px">
+            <a class="navbar-brand" href="/home">UniFit</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link smoothScroll">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link smoothScroll">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link smoothScroll">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class="social-icon ml-lg-3">
+                    <li><a href="https://fb.com/tooplate" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-instagram"></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <h3 style="margin-top: 60px; margin-left: 15px; width: 75%;">Create your workout:</h3>
+
+    % for workout_class, exercise_list in exercise_templates.items():
+    % if len(exercise_list)<=0:
+    % continue
+    % end
+    <h3 style="margin-left: 15px;">Class {{workout_class}}</h3><br>
+    <hr>
+    <div class="wc-exercises-container">
+        % for exercise in exercise_list:
+        <div class="wc-exercise-div" data-exercise-id={{exercise.exercise_id}}>
+            <div class="wc-exercise-div-top exercise-{{exercise.exercise_class}}" style="--thumb: url({{exercise.get_info('thumb_url')}}); background-image:var(--thumb)"></div>
+            <h3 style="font-size:large; margin-left: 5px;">{{exercise.display_name}}</h3>
+            <p class="wc-exercise-div-desc">{{exercise.description}}</p>
+
+            <div class="wc-exercise-bottom-row">
+                <!-- EXERCISE SELECTOR -->
+                <button data-type="select" data-exercise-id="{{exercise.exercise_id}}" data-exercise-type="{{exercise.exercise_type}}" data-reps="{{exercise.reps}}" class="wc-exercise-div-btn"></button>
+                <button data-type="minus" data-exercise-id="{{exercise.exercise_id}}" class="wc-exercise-div-btn" style="background-color: gray; border-color: darkgray;">-</button>
+                <span id="REPS_{{exercise.exercise_id}}" data-exercise-id="{{exercise.exercise_id}}">-</span>
+                <button data-type="plus" data-exercise-id="{{exercise.exercise_id}}" class="wc-exercise-div-btn" style="background-color: gray; border-color: darkgray;">+</button>
+            
+            </div>
+        </div>
+        % end
+        <br>
+    </div>
+    % end
+    <hr>
+    <h3 style="margin-left: 15px;">Workout days:</h3>
+    <p style="margin-left: 15px;"><strong>NOTE: </strong>You can only select up to <strong>2</strong> non-consecutive days per workout. Each muscle group needs at least 48 hours to fully recover.</p>
+    <br>
+    <div class="wc-day-grid">
+        % for i in range(len(week_days)):
+        <button data-day="{{i}}" class="wc-weekday-btn">{{week_days[i]}}</button>
+        % end
+    </div>
+    <br>
+    <button class="wc-exercise-submit">CREATE (0)</button>
+
+    <script src="../../../static/js/workout_creation/work.js"></script>
+    </body>
+</html>
