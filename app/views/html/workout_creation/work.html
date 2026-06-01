@@ -54,16 +54,19 @@
 
     <h3 style="margin-top: 60px; margin-left: 15px; width: 75%;">Create your workout:</h3>
 
+    % for workout_class, exercise_list in exercise_templates.items():
+    <h3>Class {{workout_class}}</h3><br>
+    <hr>
     <div class="wc-exercises-container">
-        % for exercise in exercise_templates:
+        % for exercise in exercise_list:
         <div class="wc-exercise-div" data-exercise-id={{exercise.exercise_id}}>
-            <div class="wc-exercise-div-top" style="--thumb: url({{exercise.get_info('thumb_url')}}); background-image:var(--thumb)"></div>
+            <div class="wc-exercise-div-top exercise-{{exercise.exercise_class}}" style="--thumb: url({{exercise.get_info('thumb_url')}}); background-image:var(--thumb)"></div>
             <h3 style="font-size:large; margin-left: 5px;">{{exercise.display_name}}</h3>
             <p class="wc-exercise-div-desc">{{exercise.description}}</p>
 
             <div class="wc-exercise-bottom-row">
                 <!-- EXERCISE SELECTOR -->
-                <button data-type="select" data-exercise-id="{{exercise.exercise_id}}" data-exercise-type="{{exercise.exercise_type}}" class="wc-exercise-div-btn"></button>
+                <button data-type="select" data-exercise-id="{{exercise.exercise_id}}" data-exercise-type="{{exercise.exercise_type}}" data-reps="{{exercise.reps}}" class="wc-exercise-div-btn"></button>
                 <button data-type="minus" data-exercise-id="{{exercise.exercise_id}}" class="wc-exercise-div-btn" style="background-color: gray; border-color: darkgray;">-</button>
                 <span id="REPS_{{exercise.exercise_id}}" data-exercise-id="{{exercise.exercise_id}}">-</span>
                 <button data-type="plus" data-exercise-id="{{exercise.exercise_id}}" class="wc-exercise-div-btn" style="background-color: gray; border-color: darkgray;">+</button>
@@ -71,7 +74,9 @@
             </div>
         </div>
         % end
+        <br>
     </div>
+    % end
     <button class="wc-exercise-submit">CREATE (0)</button>
 
     <script src="../../../static/js/workout_creation/work.js"></script>

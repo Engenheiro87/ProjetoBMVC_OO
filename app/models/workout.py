@@ -5,21 +5,25 @@ from copy import deepcopy;
 class Workout:
     LIBRARY = {
         "A" : {
+            "ref":"PUSH",
             "class": "Chest/Triceps/Abdomen",
             "thumb":"https://images.pexels.com/photos/5327553/pexels-photo-5327553.jpeg",
             "color":"green",
         },
         "B" : {
+            "ref":"PULL",
             "class": "Back/Biceps/Shoulders",
             "thumb":"https://images.pexels.com/photos/10440731/pexels-photo-10440731.jpeg",
             "color":"blue",
         },
         "C" : {
+            "ref":"LEG",
             "class": "Legs/Quadriceps",
             "thumb":"https://images.pexels.com/photos/14673249/pexels-photo-14673249.jpeg",
             "color":"orange",
         },
         "M":{
+            "ref":"MIX",
             "class": "Mixed",
             "thumb":"https://images.pexels.com/photos/5878683/pexels-photo-5878683.jpeg",
             "color":"red",
@@ -68,6 +72,7 @@ class Exercise(ABC):
         self.__exercise_id = info["exercise_id"];
         self.__reps = info["reps"];
         self.__info = deepcopy(info);
+        self.__class = Exercise.get_class(self.__exercise_id);
     
     def __str__(self):
         return f"""
@@ -77,9 +82,19 @@ Reps: {self.reps};
 Info: {self.info};
 """
     
+    @staticmethod
+    def get_class(exercise_id)->str:
+        for wclass, winfo in Workout.LIBRARY.items():
+            if winfo["ref"] in exercise_id:
+                return wclass;
+
     @property
     def info(self):
         return self.__info;
+
+    @property
+    def exercise_class(self):
+        return self.__class;
 
     @property
     def exercise_type(self):

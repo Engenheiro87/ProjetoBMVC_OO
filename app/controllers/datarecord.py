@@ -34,6 +34,14 @@ class DataRecord():
     def get_exercise_template(self, exercise_id:str)->ExerciseTemplate|None:
         return self.__exercises.get(exercise_id, None);
 
+    def get_templates_by_class(self, exercise_class)->ExerciseTemplate:
+        return [
+            exercise
+            for exercise_id, exercise in self.__exercises.items()
+            if exercise.exercise_class == exercise_class
+        ];
+
+
     @property
     def exercise_templates(self)->dict:
         return self.__exercises;

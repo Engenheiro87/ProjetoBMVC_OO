@@ -36,6 +36,11 @@ https://www.tooplate.com/view/2119-gymso-fitness
     --dark-color:           #171819;
     --about-bg-color:       #f9f9f9;
 
+
+    --workout-A:       #76e92a;
+    --workout-B:       #3c56ec;
+    --workout-C:       #e9962a;
+
     --gray-color:           #909090;
     --link-color:           #404040;
     --p-color:              #666262;
@@ -515,7 +520,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   .wc-exercise-div-top{
     width: 100%;
     height: 25%;
-    border-bottom: 3px solid var(--gray-color);
+    /* border-bottom: 3px solid var(--gray-color); */
 
     background-image: url("../img/team/team-image01.jpg");
     background-position: center;
@@ -524,6 +529,18 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
     border-top-right-radius: inherit;
     border-top-left-radius: inherit;
+  }
+
+  .wc-exercise-div-top.exercise-A{
+    border-bottom: 3px solid var(--workout-A);
+  }
+
+  .wc-exercise-div-top.exercise-B{
+    border-bottom: 3px solid var(--workout-B);
+  }
+
+  .wc-exercise-div-top.exercise-C{
+    border-bottom: 3px solid var(--workout-C);
   }
 
   .wc-exercise-div-desc{

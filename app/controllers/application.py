@@ -49,7 +49,13 @@ class Application():
 
     # PAGES
     def workout_creation(self):
-        return template("app/views/html/workout_creation/work", exercise_templates=self.__model.exercise_templates.values());
+        return template(
+            "app/views/html/workout_creation/work",
+            exercise_templates={
+                workout_class:self.__model.get_templates_by_class(workout_class) 
+                for workout_class in Workout.LIBRARY.keys()
+            }
+            );
 
     def error_call(self, payload:dict):
         return template("app/views/html/error", payload=payload);

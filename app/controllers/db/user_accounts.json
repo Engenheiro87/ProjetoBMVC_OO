@@ -7,34 +7,56 @@
         "accountID": "29c22196-8e72-4caa-b96a-7d54376e12d8",
         "workouts": [
             {
-                "workout_class": "M",
-                "creatorID": "29c22196-8e72-4caa-b96a-7d54376e12d8",
-                "exercises": [
-                    {
-                        "unique_id": "c6ffa877-b557-4f2e-836f-3daf475469a6",
-                        "exercise_id": "PUSH_01",
-                        "info": {
-                            "reps": 20
-                        }
-                    },
-                    {
-                        "unique_id": "cfeda643-459d-444d-9ada-85f6e14c4aa8",
-                        "exercise_id": "SMITH_01",
-                        "info": {
-                            "reps": 10
-                        }
-                    }
-                ]
-            },
-            {
                 "workout_class": "A",
                 "creatorID": "29c22196-8e72-4caa-b96a-7d54376e12d8",
                 "exercises": [
                     {
-                        "unique_id": "747586f5-bb6c-4314-bced-96888600232d",
+                        "unique_id": "b0e1b4ab-8a9d-466c-8dd8-357f0d2291f2",
                         "exercise_id": "PUSH_01",
                         "info": {
                             "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "6944519c-d7f0-4304-a04d-ceaba1b0c471",
+                        "exercise_id": "PUSH_02",
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "f22c8a78-44cb-4516-a4af-ae675d4f1d79",
+                        "exercise_id": "PUSH_04",
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "76ce99d8-b214-47f4-8dd7-a965d3a19ca9",
+                        "exercise_id": "PUSH_05",
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "36a6895a-15ce-4242-8111-abf1eda13312",
+                        "exercise_id": "PUSH_06",
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "d4a89c0b-0b66-4eaf-b96f-1ebb183193e8",
+                        "exercise_id": "PUSH_07",
+                        "info": {
+                            "reps": 3
+                        }
+                    },
+                    {
+                        "unique_id": "7cdaffe1-dd04-4de3-bd03-591f9007485b",
+                        "exercise_id": "PUSH_08",
+                        "info": {
+                            "reps": 3
                         }
                     }
                 ]

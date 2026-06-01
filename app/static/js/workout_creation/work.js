@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 }
                 else {
                     selected_exercises[exerciseId] = {
-                        "reps":12,
+                        "reps": parseInt(button.dataset.reps),
                         "exercise_type": button.dataset.exerciseType,
                     };
                     update_submit();
