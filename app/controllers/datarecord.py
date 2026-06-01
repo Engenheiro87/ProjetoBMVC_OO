@@ -58,7 +58,8 @@ class DataRecord():
                     exercise["info"]
                 )
                 for exercise in json["exercises"]
-            ]
+            ],
+            days = json["days"],
         );
 
     # USER METHODS

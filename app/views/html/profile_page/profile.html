@@ -63,12 +63,22 @@
 
                 <!-- THE WORKOUTS -->
                 % for workout in workouts:
+                % day_names = ("SUN","MON", "TUE", "WED", "THU", "FRI", "SAT");
+                % day_text = "/".join([day_names[x] for x in workout.days])
                 <a href="#"><div class="profile-card" style="--my-color: {{workout.info['color']}}; background: linear-gradient(white, var(--my-color));">
                     <h1 class="profile-card-title" style="--thumb: url('{{ workout.info['thumb'] }}');--my-color: {{workout.info['color']}}; background-image: var(--thumb); border-bottom: 2px solid var(--my-color); color:aliceblue">{{workout.info['class']}}</h1>
+                    <p class="profile-card-days">
+                    {{day_text}}</p>
                     <br>
                     <ul class="profile-card-workout-list">
-                        % for exercise in workout.exercises:
-                        <li class="profile-card-list-item">{{exercise.display_name}}</li>
+                        % for i in range(len(workout.exercises)):
+                        % exercise = workout.exercises[i];
+                        % if i == 5:
+                            <li class="profile-card-list-item">{{len(workout.exercises)-5}} more...</li>
+                        % break
+                        % else:
+                            <li class="profile-card-list-item">{{exercise.display_name}}</li>
+                        % end
                         % end
                     </ul>
                 </div>

@@ -35,8 +35,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
     --white-color:          #ffffff;
     --dark-color:           #171819;
     --about-bg-color:       #f9f9f9;
-
-
+    
     --workout-A:       #76e92a;
     --workout-B:       #3c56ec;
     --workout-C:       #e9962a;
@@ -472,6 +471,19 @@ https://www.tooplate.com/view/2119-gymso-fitness
     border-top-right-radius: 15px;
   }
 
+  .profile-card-days{
+    font-size: smaller;
+    background-color: white;
+    width: 35%; 
+    border-radius: 15px; 
+    text-align: center;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 1px solid lightgray;
+    border-left: 0;
+    box-shadow: 2px 3px 8px rgba(0,0,0,.4);
+  }
+
   .profile-card-workout-list{    
     width: 100%;
     height: 90%;
@@ -607,7 +619,42 @@ https://www.tooplate.com/view/2119-gymso-fitness
   .wc-exercise-submit.ready{
     background-color: var(--primary-color);
     cursor: pointer;
-  };
+  }
+
+  .wc-day-grid {
+    /* padding */
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+
+    width: 45%;
+    height: 35px;
+    margin-left: 25px;
+
+    /* visuals */
+    border: 2px solid #212122;
+    border-radius: 15px;
+  }
+
+  .wc-weekday-btn{
+    flex: 1;
+    font-size: smaller;
+    border:none;
+    border-right: 2px solid #212122;
+    min-width: 0;
+
+    background-color: white;
+    cursor:pointer;
+  }
+
+   .wc-weekday-btn.selected{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+  }
+
+  .wc-weekday-btn:last-child{
+    border-right: none;
+  }
 
   /*---------------------------------------
      HERO              

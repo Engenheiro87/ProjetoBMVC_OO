@@ -55,7 +55,10 @@
     <h3 style="margin-top: 60px; margin-left: 15px; width: 75%;">Create your workout:</h3>
 
     % for workout_class, exercise_list in exercise_templates.items():
-    <h3>Class {{workout_class}}</h3><br>
+    % if len(exercise_list)<=0:
+    % continue
+    % end
+    <h3 style="margin-left: 15px;">Class {{workout_class}}</h3><br>
     <hr>
     <div class="wc-exercises-container">
         % for exercise in exercise_list:
@@ -77,6 +80,16 @@
         <br>
     </div>
     % end
+    <hr>
+    <h3 style="margin-left: 15px;">Workout days:</h3>
+    <p style="margin-left: 15px;"><strong>NOTE: </strong>You can only select up to <strong>2</strong> non-consecutive days per workout. Each muscle group needs at least 48 hours to fully recover.</p>
+    <br>
+    <div class="wc-day-grid">
+        % for i in range(len(week_days)):
+        <button data-day="{{i}}" class="wc-weekday-btn">{{week_days[i]}}</button>
+        % end
+    </div>
+    <br>
     <button class="wc-exercise-submit">CREATE (0)</button>
 
     <script src="../../../static/js/workout_creation/work.js"></script>

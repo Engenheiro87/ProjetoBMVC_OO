@@ -1,62 +1,155 @@
 [
     {
-        "name": "Henrique",
+        "name": "Henrique Catharino Nunes de Mendon\u00c3\u00a7a",
         "password": "piratass",
         "email": "henriquecatharino7@gmail.com",
         "gender": "male",
-        "accountID": "29c22196-8e72-4caa-b96a-7d54376e12d8",
+        "accountID": "823ce08b-1514-4d93-9765-e40003341f67",
         "workouts": [
             {
                 "workout_class": "A",
-                "creatorID": "29c22196-8e72-4caa-b96a-7d54376e12d8",
+                "creatorID": "823ce08b-1514-4d93-9765-e40003341f67",
+                "days": [
+                    2,
+                    4
+                ],
                 "exercises": [
                     {
-                        "unique_id": "b0e1b4ab-8a9d-466c-8dd8-357f0d2291f2",
+                        "unique_id": "f1be2bee-ba4a-4f8b-a1c1-cd9e2ab250e1",
                         "exercise_id": "PUSH_01",
                         "info": {
                             "reps": 15
                         }
                     },
                     {
-                        "unique_id": "6944519c-d7f0-4304-a04d-ceaba1b0c471",
+                        "unique_id": "7b5e1003-c354-422d-86e3-36248ab36fda",
                         "exercise_id": "PUSH_02",
                         "info": {
                             "reps": 15
                         }
                     },
                     {
-                        "unique_id": "f22c8a78-44cb-4516-a4af-ae675d4f1d79",
+                        "unique_id": "729bf220-810f-43e7-a2f1-073f1e454e47",
+                        "exercise_id": "PUSH_03",
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "c2e398ec-5a76-473b-9277-6ae5ec2ad5e1",
                         "exercise_id": "PUSH_04",
                         "info": {
                             "reps": 15
                         }
                     },
                     {
-                        "unique_id": "76ce99d8-b214-47f4-8dd7-a965d3a19ca9",
+                        "unique_id": "eed15c02-20f3-4bbc-a2f4-59c074a55894",
                         "exercise_id": "PUSH_05",
                         "info": {
                             "reps": 15
                         }
+                    }
+                ]
+            },
+            {
+                "workout_class": "B",
+                "creatorID": "823ce08b-1514-4d93-9765-e40003341f67",
+                "days": [
+                    1,
+                    3
+                ],
+                "exercises": [
+                    {
+                        "unique_id": "c78314a6-25a5-4541-8e25-21fad44b4986",
+                        "exercise_id": "PULL_01",
+                        "info": {
+                            "reps": 10
+                        }
                     },
                     {
-                        "unique_id": "36a6895a-15ce-4242-8111-abf1eda13312",
-                        "exercise_id": "PUSH_06",
+                        "unique_id": "62f186e9-23fe-4d14-b747-16d48ea7c3e6",
+                        "exercise_id": "PULL_02",
+                        "info": {
+                            "reps": 10
+                        }
+                    },
+                    {
+                        "unique_id": "dad800bf-d4e4-43f9-bcb2-539f60a137e6",
+                        "exercise_id": "PULL_04",
+                        "info": {
+                            "reps": 10
+                        }
+                    },
+                    {
+                        "unique_id": "c2ab1f2a-529a-4056-b5c4-13862a02cc4b",
+                        "exercise_id": "PULL_05",
+                        "info": {
+                            "reps": 10
+                        }
+                    },
+                    {
+                        "unique_id": "b5600589-52ea-4b86-a8ee-055d5e82b915",
+                        "exercise_id": "PULL_06",
+                        "info": {
+                            "reps": 10
+                        }
+                    },
+                    {
+                        "unique_id": "38718168-df7e-4281-ba18-57d811009970",
+                        "exercise_id": "PULL_11",
+                        "info": {
+                            "reps": 10
+                        }
+                    },
+                    {
+                        "unique_id": "2aa52015-d8aa-45a9-af67-b0fb4799939b",
+                        "exercise_id": "PULL_10",
+                        "info": {
+                            "reps": 3
+                        }
+                    }
+                ]
+            },
+            {
+                "workout_class": "C",
+                "creatorID": "823ce08b-1514-4d93-9765-e40003341f67",
+                "days": [
+                    5
+                ],
+                "exercises": [
+                    {
+                        "unique_id": "f407646e-28b0-4de5-8028-62170b7da10e",
+                        "exercise_id": "LEG_02",
+                        "info": {
+                            "reps": 12
+                        }
+                    },
+                    {
+                        "unique_id": "486f8397-cd94-4de3-a8da-fca917ac7e56",
+                        "exercise_id": "LEG_01",
+                        "info": {
+                            "reps": 12
+                        }
+                    },
+                    {
+                        "unique_id": "d8a1e30b-8276-49d6-92e4-259832254856",
+                        "exercise_id": "LEG_06",
+                        "info": {
+                            "reps": 12
+                        }
+                    },
+                    {
+                        "unique_id": "969679dd-6bc0-4655-b41b-c0c88a83e040",
+                        "exercise_id": "LEG_07",
                         "info": {
                             "reps": 15
                         }
                     },
                     {
-                        "unique_id": "d4a89c0b-0b66-4eaf-b96f-1ebb183193e8",
-                        "exercise_id": "PUSH_07",
+                        "unique_id": "6a9fbb98-aa64-4e0f-b91f-09e3521d50dc",
+                        "exercise_id": "LEG_12",
                         "info": {
-                            "reps": 3
-                        }
-                    },
-                    {
-                        "unique_id": "7cdaffe1-dd04-4de3-bd03-591f9007485b",
-                        "exercise_id": "PUSH_08",
-                        "info": {
-                            "reps": 3
+                            "reps": 12
                         }
                     }
                 ]

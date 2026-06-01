@@ -54,7 +54,8 @@ class Application():
             exercise_templates={
                 workout_class:self.__model.get_templates_by_class(workout_class) 
                 for workout_class in Workout.LIBRARY.keys()
-            }
+            },
+            week_days = ("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"),
             );
 
     def error_call(self, payload:dict):
@@ -152,6 +153,7 @@ class WorkoutService():
                 "workout_class":workout_class,
                 "creatorID":user.accountID,
                 "exercises": self.parse_exercise_list(payload["exercises"]),
+                "days":payload["days"],
             }
         );
         user.add_workout(workout);

@@ -29,11 +29,12 @@ class Workout:
             "color":"red",
         }
     }
-    def __init__(self, workout_class:str, creatorID:str, exercises:list):
+    def __init__(self, workout_class:str, creatorID:str, exercises:list, days:list):
         self.workout_class = workout_class;
         self.info = Workout.LIBRARY.get(workout_class);
         self.__creatorID = creatorID;
         self.__exercises = exercises;
+        self.__days = days;
     
     def __str__(self):
         return f"""
@@ -53,6 +54,10 @@ Exercise1: {self.exercises[0]}
     def exercises(self):
         return self.__exercises;
 
+    @property
+    def days(self):
+        return self.__days;
+
     def get_exercise(self, uniqueID:str)->ExerciseUser:
         for exercise in self.__exercises:
             if exercise.unique_id == uniqueID:
@@ -62,6 +67,7 @@ Exercise1: {self.exercises[0]}
         return {
             "workout_class":self.workout_class,
             "creatorID":self.__creatorID,
+            "days":self.__days,
             "exercises":[exercise.pack() for exercise in self.__exercises],
         };
 
