@@ -154,10 +154,21 @@ class WorkoutService():
                 "creatorID":user.accountID,
                 "exercises": self.parse_exercise_list(payload["exercises"]),
                 "days":payload["days"],
+                "unique_id":str(uuid4()),
             }
         );
         user.add_workout(workout);
         self.__data_model.save();
+        return True, None;
+
+    def delete_workout(self, session_id:str, payload:dict):
+        user = self.__app.from_session_id(session_id);
+        if not user:
+            return False, "Couldn't find this user.";
+        if not payload:
+            return False, "No payload sent.";
+        workout_id = payload["workout_id"];
+        self.__data_model.delete_workout(user, workout_id);
         return True, None;
     
     def parse_exercise_list(self, exercise_dict:dict)->list:

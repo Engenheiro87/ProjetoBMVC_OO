@@ -60,7 +60,12 @@ class DataRecord():
                 for exercise in json["exercises"]
             ],
             days = json["days"],
+            unique_id= json["unique_id"]
         );
+
+    def delete_workout(self, user:UserAccount, workout_id:str):
+        user.remove_workout(workout_id);
+        self.save();
 
     # USER METHODS
 

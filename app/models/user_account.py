@@ -32,6 +32,9 @@ Workout1: {self.workouts[0]};
 
     def add_workout(self, workout):
         self.__workouts.append(workout);
+    
+    def remove_workout(self, workout_id:str):
+        self.__workouts = [workout for workout in self.__workouts if workout.unique_id != workout_id];
 
     def pack_workouts(self)->list:
         return [workout.pack() for workout in self.__workouts];

@@ -99,6 +99,16 @@ def create_workout():
         "error":error or None,
     }
 
+@app.route("/delete_workout", method="POST")
+def delete_workout():
+    payload = request.json;
+    print(f"got the request to delete, payload = {payload}");
+    sucess, error = ctl.get_service("WorkoutService").delete_workout(ctl.get_session_id(), payload);
+    return {
+        "sucess":sucess,
+        "error":error
+    };
+
 # OLD
 @app.route("/portal", method="POST")
 def action_portal():

@@ -499,6 +499,20 @@ https://www.tooplate.com/view/2119-gymso-fitness
     font-size: inherit;
     height: 15%;
   }
+
+  .delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #5c0303;
+    border-radius: 50%;
+    border: 1px solid red;
+    height: 25px;
+    width: 25px;
+
+    cursor: pointer;
+  }
   
   /* WORKOUT CREATION (WC) */
   .wc-exercises-container{
