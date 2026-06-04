@@ -67,6 +67,9 @@ Exercise1: {self.exercises[0]}
             if exercise.unique_id == uniqueID:
                 return exercise;
 
+    def get_info(self, info:str)->any|None:
+        return self.info.get(info, None);
+
     def pack(self)->dict:
         return {
             "workout_class":self.workout_class,
@@ -130,7 +133,6 @@ Info: {self.info};
     @property
     def description(self):
         return self.__info.get("desc", "No description available.");
-
     
 
 class ExerciseTemplate(Exercise):
@@ -154,6 +156,10 @@ class ExerciseUser(Exercise):
     @property
     def unique_id(self):
         return self.__unique_id;
+
+    @property
+    def rest_time(self)->int:
+        return self.info.get("rest_time", 0);
 
     def increment_reps(self, increment:int):
         self.reps+=increment;

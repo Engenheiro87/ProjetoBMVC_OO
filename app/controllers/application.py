@@ -15,6 +15,7 @@ class Application():
             "login":self.login,
             "profile":self.profile,
             "workout_creation":self.workout_creation,
+            "workout_view": self.workout_view,
 
             # errors
             "error":self.error_call,
@@ -48,6 +49,14 @@ class Application():
         return self.__authenticated_users.get(session_id, None);
 
     # PAGES
+    def workout_view(self, workout_id:str):
+        user:UserAccount = self.__authenticated_users[self.get_session_id()];
+        workout = user.get_workout_from_id(workout_id);
+        return template(
+            "app/views/html/workout_view/workout",
+            workout=workout,
+        );
+
     def workout_creation(self):
         return template(
             "app/views/html/workout_creation/work",

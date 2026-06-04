@@ -388,6 +388,11 @@ https://www.tooplate.com/view/2119-gymso-fitness
     top: 8px;
   }
 
+  .text-link{
+    color: var(--primary-color);
+    text-decoration: underline;
+  }
+
   /*--------------------------------------
     PROFILE PAGE
   --------------------------------------- */
@@ -464,7 +469,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
     /* aligning */
     width: 100%;
     margin-top: 0;
-    height: 25%;
+    height: 150%;
 
     /* outer visuals */
     border-top-left-radius: 15px;
@@ -668,6 +673,106 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
   .wc-weekday-btn:last-child{
     border-right: none;
+  }
+
+  /* WORKOUT VIEW */
+  .wv-exercise-container{
+    /* padding */
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+
+    margin: 25px auto;
+    width: 90%;
+    height: auto;
+    
+
+    /* visuals */
+  }
+
+  .wv-exercise {
+    /* padding */
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 0;
+    margin: 0 auto;
+    width: 50%;
+    height: 250px;
+
+    /* visuals */
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--white-color);
+    box-shadow: 0px 2px 8px rgba(0,0,0, .5);
+  }
+
+  .wv-exercise .done{
+    background-color: var(--primary-color);
+    border-radius: 7px;
+    border: 1px solid black;
+    font-weight: bolder;
+    width: 45%;
+    cursor: pointer;
+  }
+
+  .wv-exercise .timer{
+    background-color: #404040;
+    border-radius: 7px;
+    border: 1px solid var(--primary-color);
+    border: none;
+    font-weight: lighter;
+    width: 45%;
+    cursor: pointer;
+    color:white;
+  }
+
+  .wv-exercise p{
+     /* word-break: break-all; */
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    font-size:smaller;
+    height: 40px; 
+    margin-left: 5px;
+  }
+
+  .wv-stats{
+    height: 37%;
+  }
+  
+  .wv-stats .stat{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: -60px;
+    flex-direction: column;
+    
+    width: 45px;
+    height: 45px;
+
+    border-radius: 15px;
+    border: 1px solid #454546;
+  }
+
+  .wv-stats .stat h3{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 10px;
+    height: 15px;
+    width: 100%;
+    text-align: center;
+    color: #454546;
+  }
+
+  .wv-exercise-gif {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-right: 2px solid var(--primary-color);
   }
 
   /*---------------------------------------

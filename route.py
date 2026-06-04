@@ -102,12 +102,22 @@ def create_workout():
 @app.route("/delete_workout", method="POST")
 def delete_workout():
     payload = request.json;
-    print(f"got the request to delete, payload = {payload}");
     sucess, error = ctl.get_service("WorkoutService").delete_workout(ctl.get_session_id(), payload);
     return {
         "sucess":sucess,
         "error":error
     };
+
+@app.route("/workout_view", method="GET")
+@app.route("/workout_view/<workout_id>", method="GET")
+def workout_view(workout_id=None):
+    if not workout_id:
+        print(Fore.RED+"No workout_id given.");
+        return redirect("/profile");
+    if not ctl.is_authenticated():
+        print(Fore.RED+"Nobody logged in.");
+        return redirect("/login");
+    return ctl.render("workout_view", parameter=workout_id);
 
 # OLD
 @app.route("/portal", method="POST")

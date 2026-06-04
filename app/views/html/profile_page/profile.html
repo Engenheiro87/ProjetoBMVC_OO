@@ -67,7 +67,9 @@
                 % day_names = ("SUN","MON", "TUE", "WED", "THU", "FRI", "SAT");
                 % day_text = "/".join([day_names[x] for x in workout.days])
                 <div class="profile-card" style="--my-color: {{workout.info['color']}}; background: linear-gradient(white, var(--my-color));">
+                    <a href="/workout_view/{{workout.unique_id}}">
                     <h1 class="profile-card-title" style="--thumb: url('{{ workout.info['thumb'] }}');--my-color: {{workout.info['color']}}; background-image: var(--thumb); border-bottom: 2px solid var(--my-color); color:aliceblue">{{workout.info['class']}}</h1>
+                    </a>
                     <p class="profile-card-days">
                     {{day_text}}</p>
 

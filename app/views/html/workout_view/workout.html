@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniFit - Workout view</title>
+    <link rel="icon" type="image/png" href="../../../static/img/unifit_icon.png">
+
+    <link rel="stylesheet" href="../../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../static/css/aos.css">
+    
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="../../../static/css/tooplate-gymso-style.css">
+    
+</head>
+<body style="margin-top: 80px;">
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <img src="../../../static/img/unifit_icon.png" width="45px">
+            <a class="navbar-brand" href="">UniFit</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-lg-auto">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link smoothScroll">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link smoothScroll">About Us</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link smoothScroll">Contact</a>
+                    </li>
+                </ul>
+
+                <ul class="social-icon ml-lg-3">
+                    <li><a href="https://fb.com/tooplate" class="fa fa-facebook"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-instagram"></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <a href="/profile" class="text-link" style="margin-left: 15px;">Back to my profile</a>
+    <!-- WORKOUT CLASS -->
+    <h3 style="margin-left:15px; height:45px; border-bottom: 2px solid var(--primary-color);">{{workout.get_info('class')}}</h3>
+
+    <div class="wv-exercise-container">
+        % for exercise in workout.exercises:
+        % rest_time = exercise.rest_time;
+        % frest_time = f"{rest_time//60:02}:{rest_time%60:02}";
+        <div class="wv-exercise">
+            <!-- (gif) left part -->
+            <div style="width: 45%">
+                <div class="wv-exercise-gif">
+                    <img src="{{exercise.info.get('gif_url', exercise.info['thumb_url'])}}", width="100%" title="Picture of the exercise">
+                </div>
+            </div>
+            <!-- right part -->
+            <div style="width: 50%; margin-left: 5px;">
+                <h3>{{exercise.display_name}}</h3>
+                <hr>
+                <p>{{exercise.description}}</p>
+                <!-- STATS -->
+                <div style="display: flex; flex-direction: row; gap:5px;">
+                    <div class="wv-stats">
+                        <div class="stat">
+                            <h3>REPS:</h3>
+                            <h3>{{exercise.reps}}</h3>
+                        </div>
+                    </div>
+                    <div class="wv-stats">
+                        <div class="stat">
+                            <h3>REST:</h3>
+                            <h3>{{frest_time}}</h3>
+                        </div>
+                    </div>
+                </div>
+                <div style="display: flex; justify-content: center; gap:5px; padding-top: 15px;">
+                    <button class="timer" data-exercise-id="{{exercise.exercise_id}}" data-time="{{exercise.rest_time}}">
+                        {{frest_time}}
+                    </button>
+                    <button class="done">
+                        DONE
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        % end
+
+    </div>
+    <script src="../../../static/js/workout_view/wv.js"></script>
+</body>
+</html>
