@@ -1,109 +1,88 @@
 [
     {
-        "name": "Henrique Catharino Nunes de Mendon\u00c3\u00a7a",
+        "name": "Henrique",
         "password": "piratass",
         "email": "henriquecatharino7@gmail.com",
         "gender": "male",
-        "accountID": "823ce08b-1514-4d93-9765-e40003341f67",
+        "accountID": "9a0aee67-58fa-4563-9242-b756e8ce5531",
         "workouts": [
             {
-                "workout_class": "M",
-                "creatorID": "823ce08b-1514-4d93-9765-e40003341f67",
+                "workout_class": "C",
+                "creatorID": "9a0aee67-58fa-4563-9242-b756e8ce5531",
                 "days": [
                     1,
                     3
                 ],
                 "exercises": [
                     {
-                        "unique_id": "5ae618d7-3eaa-4d15-9595-65cb24d02c49",
-                        "exercise_id": "PUSH_01",
+                        "unique_id": "9b40cdbf-ad22-42eb-8b27-49e5e6879c96",
+                        "exercise_id": "LEG_09",
+                        "last_completed": "2026-06-05 14-29-47",
                         "info": {
                             "reps": 15
                         }
                     },
                     {
-                        "unique_id": "6c692dd4-0eb4-4d76-8a23-6fc602e82c75",
-                        "exercise_id": "PUSH_02",
+                        "unique_id": "b4dfe344-f073-4852-a076-58eb73721837",
+                        "exercise_id": "LEG_10",
+                        "last_completed": "2026-06-05 14-21-49",
                         "info": {
-                            "reps": 15
+                            "reps": 12
                         }
                     },
                     {
-                        "unique_id": "aa016e32-97f5-443d-b829-dcb81252f371",
-                        "exercise_id": "PUSH_03",
-                        "info": {
-                            "reps": 15
-                        }
-                    },
-                    {
-                        "unique_id": "feee11c0-c5fb-4b92-9098-d01d41d01565",
-                        "exercise_id": "PUSH_04",
-                        "info": {
-                            "reps": 15
-                        }
-                    },
-                    {
-                        "unique_id": "93a278d0-fe99-4393-9c10-b68cf05a74e0",
-                        "exercise_id": "PUSH_05",
-                        "info": {
-                            "reps": 15
-                        }
-                    },
-                    {
-                        "unique_id": "a356a0e7-7fbe-4076-bca6-fae6dc3861a7",
-                        "exercise_id": "PUSH_06",
-                        "info": {
-                            "reps": 15
-                        }
-                    },
-                    {
-                        "unique_id": "f614e859-1f88-42da-bdea-f65e2891db3f",
-                        "exercise_id": "PULL_10",
+                        "unique_id": "b80126f8-ac70-4dc4-9d41-e54d1d3f1901",
+                        "exercise_id": "LEG_11",
+                        "last_completed": "2026-06-05 14-25-11",
                         "info": {
                             "reps": 3
                         }
+                    },
+                    {
+                        "unique_id": "a3d710e3-5605-4c3a-9200-8719a0a993b7",
+                        "exercise_id": "LEG_12",
+                        "last_completed": null,
+                        "info": {
+                            "reps": 12
+                        }
                     }
                 ],
-                "unique_id": "42a92605-2286-4fde-a1aa-020134b9f546"
+                "unique_id": "07016166-c76c-4980-8eb8-65a7d8074eab"
             },
             {
                 "workout_class": "A",
-                "creatorID": "823ce08b-1514-4d93-9765-e40003341f67",
+                "creatorID": "9a0aee67-58fa-4563-9242-b756e8ce5531",
                 "days": [
                     2,
                     4
                 ],
                 "exercises": [
                     {
-                        "unique_id": "2c7ae937-3b34-4624-8e7e-a4603d6a9489",
+                        "unique_id": "4f7d2855-71a0-4d74-9fb7-16857c08cde8",
+                        "exercise_id": "PUSH_01",
+                        "last_completed": "2026-06-05 14-29-23",
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "722cad07-7cab-4541-82a5-eb2a9218ec91",
                         "exercise_id": "PUSH_02",
+                        "last_completed": null,
                         "info": {
-                            "reps": 15
+                            "reps": 10
                         }
                     },
                     {
-                        "unique_id": "52a7dfad-32d8-4084-8635-dfcc581cea20",
+                        "unique_id": "f150a81d-e340-4728-a38b-d2a54d73f9d4",
                         "exercise_id": "PUSH_03",
-                        "info": {
-                            "reps": 15
-                        }
-                    },
-                    {
-                        "unique_id": "0a381e2b-d00b-4c57-9928-7c7f91fbb2e9",
-                        "exercise_id": "PUSH_07",
-                        "info": {
-                            "reps": 3
-                        }
-                    },
-                    {
-                        "unique_id": "19a5a669-ea8f-4c36-a249-8d3429a23924",
-                        "exercise_id": "PUSH_06",
+                        "last_completed": null,
                         "info": {
                             "reps": 15
                         }
                     }
                 ],
-                "unique_id": "3467381a-3303-4ab4-80e2-5cfcd4ff73eb"
+                "unique_id": "0d316126-7df5-48f8-96bb-a37415e4d447"
             }
         ]
     }

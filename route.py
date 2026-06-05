@@ -119,6 +119,15 @@ def workout_view(workout_id=None):
         return redirect("/login");
     return ctl.render("workout_view", parameter=workout_id);
 
+@app.route("/mark_workout_done", method="POST")
+def mark_exercise_done():
+    payload = request.json;
+    sucess, error = ctl.get_service("WorkoutService").complete_exercise(ctl.get_session_id(), payload);
+    return {
+        "sucess":sucess,
+        "error":error
+    };
+
 # OLD
 @app.route("/portal", method="POST")
 def action_portal():

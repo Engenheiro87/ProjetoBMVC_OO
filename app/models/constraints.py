@@ -1,0 +1,1 @@
+DAY_FORMAT1 = "%Y-%m-%d %H-%M-%S";

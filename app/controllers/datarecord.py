@@ -1,5 +1,7 @@
 from app.models.user_account import UserAccount
 from app.models.workout import ExerciseTemplate, ExerciseUser, Workout;
+from app.models.constraints import DAY_FORMAT1;
+from datetime import datetime;
 import json;
 import uuid;
 
@@ -55,6 +57,7 @@ class DataRecord():
                 ExerciseUser.from_template(
                     self.get_exercise_template(exercise["exercise_id"]),
                     exercise["unique_id"],
+                    self.convert_to_datetime(exercise.get("last_completed", None)),
                     exercise["info"]
                 )
                 for exercise in json["exercises"]
@@ -66,6 +69,12 @@ class DataRecord():
     def delete_workout(self, user:UserAccount, workout_id:str):
         user.remove_workout(workout_id);
         self.save();
+    
+    # DATE METHODS
+    def convert_to_datetime(self, string=None)->datetime|None:
+        if not string:
+            return;
+        return datetime.strptime(string, DAY_FORMAT1);
 
     # USER METHODS
 

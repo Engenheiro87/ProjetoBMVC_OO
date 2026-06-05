@@ -87,4 +87,65 @@ document.addEventListener("DOMContentLoaded", function(){
             };
         });
     });
+
+    done_btns.forEach(button => {
+        const workout_id =
+            button.dataset.workoutId;
+
+        const exercise_id = 
+            button.dataset.exerciseId;
+
+        let available =
+            (button.dataset.available === "True");
+
+        function turn_unavailable(){
+            available = false;
+            button.classList.remove("av");
+            button.classList.add("un");
+            button.textContent =
+                "DONE";
+        };
+
+        function turn_available(){
+            available = true;
+            button.classList.add("un");
+            button.classList.remove("av");
+            button.textContent =
+                "FINISH";
+        };
+        
+        button.addEventListener("click", function(){
+            console.log(`Exercise \"is available\" = ${available}`);
+            
+            if (available === false){
+                console.log("returning!");
+                return;
+            }
+            else {
+                console.log("fetching...");
+                turn_unavailable();
+                fetch("/mark_workout_done", 
+                    {
+                     method : "POST",
+
+                     headers : {
+                        "Content-Type":"application/json",
+                     },
+
+                     body : JSON.stringify({
+                        "workout_id":workout_id,
+                        "exercise_id":exercise_id,
+                     })
+                    }
+                )
+                .then(response=>response.json())
+                .then(data=>{
+                    if (data["success"]===false){
+                        turn_available();
+                        console.log(data["error"]);
+                    };
+                });
+            };
+        });
+    });
 });

@@ -87,8 +87,8 @@
                     <button class="timer" data-exercise-id="{{exercise.exercise_id}}" data-time="{{exercise.rest_time}}">
                         {{frest_time}}
                     </button>
-                    <button class="done">
-                        DONE
+                    <button data-workout-id="{{workout.unique_id}}" data-exercise-id="{{exercise.unique_id}}" data-available="{{exercise.is_available}}" class="done {{exercise.is_available and 'av' or 'un'}}">
+                        {{exercise.is_available and "FINISH" or "DONE"}}
                     </button>
                 </div>
             </div>

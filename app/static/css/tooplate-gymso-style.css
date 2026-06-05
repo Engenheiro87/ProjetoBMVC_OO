@@ -707,12 +707,21 @@ https://www.tooplate.com/view/2119-gymso-fitness
   }
 
   .wv-exercise .done{
-    background-color: var(--primary-color);
+    background-color: white;
     border-radius: 7px;
     border: 1px solid black;
     font-weight: bolder;
     width: 45%;
     cursor: pointer;
+  }
+
+  .wv-exercise .av{
+    background-color: var(--primary-color);
+  }
+
+
+  .wv-exercise .done.un{
+    background-color: gray;
   }
 
   .wv-exercise .timer{

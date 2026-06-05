@@ -2,9 +2,10 @@ from bottle import template, redirect, request;
 from app.controllers.datarecord import DataRecord;
 from colorama import init, Fore, Style
 from uuid import uuid4;
+from datetime import datetime;
 
 from app.models.user_account import UserAccount;
-from app.models.workout import Workout, ExerciseUser;
+from app.models.workout import Workout;
 
 init(autoreset=True);
 class Application():
@@ -149,6 +150,24 @@ class WorkoutService():
     def __init__(self, data_model:DataRecord, app:Application):
         self.__data_model = data_model;
         self.__app = app;
+
+    def complete_exercise(self, session_id:str, payload:dict):
+        if (not "exercise_id" in payload) or (not "workout_id" in payload):
+            return False, f"No exercise/workout id given. Payload = {payload}";
+        # getting user
+        user = self.__app.from_session_id(session_id);
+
+        # getting IDs
+        workout_id:str = payload["workout_id"];
+        exercise_id:str = payload["exercise_id"];
+
+        # getting workout and exercise
+        workout:Workout = user.get_workout_from_id(workout_id);
+        exercise = workout.get_exercise(exercise_id);
+
+        exercise.last_completed = datetime.now();
+        self.__data_model.save();
+        return True, None;
 
     def create_workout(self, session_id:str, payload:dict):
         user = self.__app.from_session_id(session_id);

@@ -1,6 +1,15 @@
 from uuid import uuid4;
 from abc import ABC, abstractmethod;
 from copy import deepcopy;
+from datetime import datetime;
+from app.models.constraints import DAY_FORMAT1;
+
+# CONSTANTS
+MINUTE = 60;
+HOUR = MINUTE*60;
+DAY = HOUR*24;
+
+MUSCLE_RECOVERY = DAY*2;
 
 class Workout:
     LIBRARY = {
@@ -79,7 +88,6 @@ Exercise1: {self.exercises[0]}
             "unique_id":self.unique_id,
         };
 
-
 class Exercise(ABC):
     def __init__(self, info:dict):
         self.display_name = info["display_name"] or "Untitled Exercise";
@@ -146,12 +154,13 @@ class ExerciseTemplate(Exercise):
         return deepcopy(self.info);
 
 class ExerciseUser(Exercise):
-    def __init__(self, info:dict, unique_id:str, custom_info=None):
+    def __init__(self, info:dict, unique_id:str, last_completed:datetime|None, custom_info=None):
         if custom_info:
             for key, value in custom_info.items():
                 info[key]=value;
         super().__init__(info);
         self.__unique_id = unique_id;
+        self.__last_completed = last_completed;
     
     @property
     def unique_id(self):
@@ -160,6 +169,20 @@ class ExerciseUser(Exercise):
     @property
     def rest_time(self)->int:
         return self.info.get("rest_time", 0);
+
+    @property
+    def last_completed(self)->datetime|None:
+        return self.__last_completed;
+
+    @last_completed.setter
+    def last_completed(self, new_value:datetime):
+        self.__last_completed = new_value;
+
+    @property
+    def is_available(self)->bool:
+        if not self.__last_completed:
+            return True;
+        return (datetime.now()-self.last_completed).seconds >= MUSCLE_RECOVERY;
 
     def increment_reps(self, increment:int):
         self.reps+=increment;
@@ -171,11 +194,12 @@ class ExerciseUser(Exercise):
         return {
             "unique_id":self.__unique_id,
             "exercise_id":self.exercise_id,
+            "last_completed":self.__last_completed and datetime.strftime(self.__last_completed, DAY_FORMAT1) or None,
             "info":{
                 "reps":self.reps,
             },
         };
 
     @classmethod
-    def from_template(cls, template:ExerciseTemplate, uniqueID:str, custom_info:dict=None)->ExerciseUser:
-        return cls(template.get_info_copy(), uniqueID, custom_info);
+    def from_template(cls, template:ExerciseTemplate, uniqueID:str, last_completed:datetime, custom_info:dict=None)->ExerciseUser:
+        return cls(template.get_info_copy(), uniqueID, last_completed, custom_info);
