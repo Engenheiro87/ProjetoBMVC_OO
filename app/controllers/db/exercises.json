@@ -14,7 +14,8 @@
         "exercise_id":"PUSH_02",
         "exercise_type":"A",
         "display_name":"Incline Push-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://cdn-cccio.nitrocdn.com/sQAAylIpwgMYZgBLSXcMgCkUIbfIzHvb/assets/images/optimized/rev-85d6de7/www.aleanlife.com/wp-content/uploads/2021/07/what-are-benefits-of-incine-push-ups.jpg",
+        "gif_url":"https://www.24hourfitness.com/24life/fitness/2019/media_11b7da1019b14518bec3414f2c13e45a96d191bb4.gif?width=750&format=gif&optimize=medium",
         "reps":15,
         "rest_time":45,
         "desc":"Easier variation using a bench, stair, or ledge to reduce resistance."
@@ -24,7 +25,8 @@
         "exercise_id":"PUSH_03",
         "exercise_type":"A",
         "display_name":"Decline Push-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://xcelerategyms.com/wp-content/uploads/2026/04/image1-21.jpg",
+        "gif_url":"https://i.pinimg.com/originals/ec/f3/3d/ecf33d10ca3d096b18f5c46f2dfa7a7b.gif",
         "reps":15,
         "rest_time":45,
         "desc":"Feet elevated on a bench or step to emphasize the upper chest and shoulders."
@@ -34,7 +36,8 @@
         "exercise_id":"PUSH_04",
         "exercise_type":"A",
         "display_name":"Pike Push-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://images.ctfassets.net/hjcv6wdwxsdz/7ttOp8ER6qe63u4WiTQDla/0e5d9078c0e6b997c3c7d67b51da6eaa/pike-push-up-curt-hold.png",
+        "gif_url":"https://i.pinimg.com/originals/e7/67/f1/e767f1775ecefbc1ee5366162727da59.gif",
         "reps":15,
         "rest_time":45,
         "desc":"Body forms an inverted V shape, shifting focus toward the shoulders."
@@ -44,7 +47,8 @@
         "exercise_id":"PUSH_05",
         "exercise_type":"A",
         "display_name":"Diamond Push-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://s3assets.skimble.com/assets/2857/skimble-workout-trainer-exercise-diamond-pushups-1_iphone.jpg",
+        "gif_url":"https://i.pinimg.com/originals/c8/ea/f0/c8eaf0f136f43d520be5f281fe0c68a2.gif",
         "reps":15,
         "rest_time":45,
         "desc":"Hands positioned close together to increase triceps and inner chest activation."
@@ -54,7 +58,8 @@
         "exercise_id":"PUSH_06",
         "exercise_type":"A",
         "display_name":"Wide Push-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://liftmanual.com/wp-content/uploads/2023/04/wide-hand-push-up.jpg",
+        "gif_url":"https://images.squarespace-cdn.com/content/v1/688fc73e20ffbd450fcb4753/1764097447889-ZO7G2LWR2UXP2XDJBZR4/widegrippushup-1508248881.gif",
         "reps":15,
         "rest_time":45,
         "desc":"Hands placed wider than shoulder width to emphasize chest engagement."
@@ -64,7 +69,7 @@
         "exercise_id":"PUSH_07",
         "exercise_type":"A",
         "display_name":"Plank",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://parade.com/.image/ODowMDAwMDAwMDAxMjQ2Mzkz/plank-exercises-workouts-lose-belly-fat-benefits.jpg?profile=w2560&x=50&y=50",
         "reps":3,
         "rest_time":45,
         "desc":"Static core exercise that develops abdominal stability and posture."
@@ -74,7 +79,7 @@
         "exercise_id":"PUSH_08",
         "exercise_type":"A",
         "display_name":"Side Plank",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://experiencelife.lifetime.life/wp-content/uploads/2021/07/bid-side-plank.jpg",
         "reps":3,
         "rest_time":45,
         "desc":"Targets obliques and improves lateral core strength."
@@ -84,7 +89,8 @@
         "exercise_id":"PUSH_09",
         "exercise_type":"A",
         "display_name":"Leg Raises",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://hips.hearstapps.com/hmg-prod/images/lying-leg-raises-1546550690.jpg?crop=1.00xw:0.670xh;0,0.249xh&resize=1200:*",
+        "gif_url":"https://cdn.jefit.com/assets/img/exercises/gifs/44.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Raises both legs while lying down to strengthen the lower abdominal region."
@@ -94,7 +100,8 @@
         "exercise_id":"PUSH_10",
         "exercise_type":"A",
         "display_name":"Mountain Climbers",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://images.ctfassets.net/hjcv6wdwxsdz/1WCM5ZFQUTUvuDohwMqr3B/f9b0d7e0eefafd21806937e72b2f867e/mountain-climbers.png?w=1200",
+        "gif_url": "https://www.mitrecsports.com/assets/Mountain-Climbers-Gif.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Dynamic exercise combining core activation and cardiovascular conditioning."
@@ -104,7 +111,7 @@
         "exercise_id":"PUSH_11",
         "exercise_type":"A",
         "display_name":"Hollow Hold",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://experiencelife.lifetime.life/wp-content/uploads/2019/04/may19-BID-HollowHold_50815.jpg",
         "reps":3,
         "rest_time":45,
         "desc":"Gymnastics-inspired static hold that strengthens the entire abdominal wall."
@@ -114,7 +121,8 @@
         "exercise_id":"PUSH_12",
         "exercise_type":"A",
         "display_name":"Shoulder Taps",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUkPBndVFm1HGzYJ9PyS-BW_DlKYwo9ODTUw&s",
+        "gif_url":"https://burnfit.io/en/wp-content/uploads/sites/3/2026/01/SHD_TAP-1.gif",
         "reps":3,
         "rest_time":45,
         "desc":"Plank variation requiring core stability while alternating shoulder touches."
@@ -125,7 +133,8 @@
         "exercise_id":"PULL_01",
         "exercise_type":"B",
         "display_name":"Pull-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://hips.hearstapps.com/hmg-prod/images/young-strong-man-performing-pull-ups-on-an-outdoor-royalty-free-image-1767908288.pjpeg?crop=0.66635xw:1xh;center,top&resize=640:*",
+        "gif_url":"https://i.pinimg.com/originals/f6/40/12/f64012169c23b6be2a7f1823cac1db13.gif",
         "reps":10,
         "rest_time":45,
         "desc":"Fundamental pulling movement targeting back, biceps, and grip strength."
@@ -135,7 +144,8 @@
         "exercise_id":"PULL_02",
         "exercise_type":"B",
         "display_name":"Chin-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://www.muscletech.com/cdn/shop/articles/chinups.jpg?v=1721410926",
+        "gif_url":"https://hips.hearstapps.com/hmg-prod/images/workouts/2016/03/chinup-1457101678.gif?crop=1xw:1xh;center,top&resize=980:*",
         "reps":10,
         "rest_time":45,
         "desc":"Pull-up variation with underhand grip, increasing biceps involvement."
@@ -146,7 +156,8 @@
         "exercise_id":"PULL_03",
         "exercise_type":"B",
         "display_name":"Australian Pull-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://cdn.shopify.com/s/files/1/0568/6280/2107/files/traction_asutralienne_prise_supination_600x600.jpg",
+        "gif_url":"https://api.smartworkout.app/asset/image/a57e3d8b-2b77-48b8-a14f-058d0f9524ea",
         "reps":10,
         "rest_time":45,
         "desc":"Horizontal pulling exercise using a low bar or sturdy railing."
@@ -156,7 +167,8 @@
         "exercise_id":"PULL_04",
         "exercise_type":"B",
         "display_name":"Scapular Pull-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://media.post.rvohealth.io/wp-content/uploads/2019/09/pull-up-pullup-gym-732x549-thumbnail.jpg",
+        "gif_url":"https://i.pinimg.com/originals/23/b5/01/23b50198aff15ba63f69f8f47de2554e.gif",
         "reps":10,
         "rest_time":45,
         "desc":"Focuses on shoulder blade control and pull-up progression."
@@ -166,7 +178,8 @@
         "exercise_id":"PULL_05",
         "exercise_type":"B",
         "display_name":"Negative Pull-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/05/Female_Pullup_RearView_1296x728-header-1296x728.jpg?w=1155&h=1528",
+        "gif_url":"https://gymvisual.com/img/p/2/0/3/1/5/20315.gif",
         "reps":10,
         "rest_time":45,
         "desc":"Slow lowering phase of a pull-up to build strength toward full repetitions."
@@ -176,7 +189,8 @@
         "exercise_id":"PULL_06",
         "exercise_type":"B",
         "display_name":"Commando Pull-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://bodybuilding-wizard.com/wp-content/uploads/2023/08/commando-pull-ups-muscles-worked.jpg",
+        "gif_url":"https://i.pinimg.com/originals/86/c4/44/86c444cf1028fe98638431ec8680912d.gif",
         "reps":10,
         "rest_time":45,
         "desc":"Pull-up variation performed with the body positioned sideways to the bar."
@@ -186,7 +200,8 @@
         "exercise_id":"PULL_07",
         "exercise_type":"B",
         "display_name":"Dead Hang",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://drkleiner.com.br/wp-content/uploads/2024/06/UU8Zh7b8.png",
+        "gif_url":"https://www.docteur-fitness.com/wp-content/uploads/2025/11/dead-hang-suspension-passive.gif",
         "reps":3,
         "rest_time":45,
         "desc":"Simple hanging exercise that improves grip strength and shoulder mobility."
@@ -196,7 +211,8 @@
         "exercise_id":"PULL_07",
         "exercise_type":"B",
         "display_name":"Archer Pull-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://caliathletics.com/wp-content/uploads/2018/05/Archery-pull-ups.jpg",
+        "gif_url":"https://gymvisual.com/img/p/1/3/1/4/2/13142.gif",
         "reps":10,
         "rest_time":45,
         "desc":"Advanced unilateral pulling exercise that develops back and arm strength."
@@ -206,7 +222,8 @@
         "exercise_id":"PULL_08",
         "exercise_type":"B",
         "display_name":"Resistance Band Rows",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://www.litmethod.com/cdn/shop/articles/Screen_Shot_2023-01-18_at_11.38.43_AM.png?v=1674195056&width=1500",
+        "gif_url":"https://i.pinimg.com/originals/4c/3d/15/4c3d1503c766a24f843f148e22d55fa5.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Portable row variation using resistance bands when available."
@@ -216,7 +233,8 @@
         "exercise_id":"PULL_09",
         "exercise_type":"B",
         "display_name":"Face Pulls",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://cdn.mos.cms.futurecdn.net/3ZAEXcd7cA3W2fMrVQY9EE.jpg",
+        "gif_url":"https://fitnessprogramer.com/wp-content/uploads/2021/02/Face-Pull.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Strengthens rear deltoids and improves shoulder health."
@@ -226,7 +244,7 @@
         "exercise_id":"PULL_10",
         "exercise_type":"B",
         "display_name":"Superman Hold",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://images.ctfassets.net/hjcv6wdwxsdz/79sS2tpNEIFtGYuBfCNxYi/8367923f934c6f2369f50b3f42c57be8/superman-exercise-hold.png?w=1200",
         "reps":3,
         "rest_time":45,
         "desc":"Floor exercise targeting lower back endurance and posterior chain activation."
@@ -236,7 +254,8 @@
         "exercise_id":"PULL_11",
         "exercise_type":"B",
         "display_name":"Reverse Snow Angels",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://cdn.mos.cms.futurecdn.net/mRX7bi3DLvbRDcyF9F7KPU.jpg",
+        "gif_url":"https://i0.wp.com/post.healthline.com/wp-content/uploads/2021/02/400x400_Bodyweight_Back_Exercises_Reverse_Snow_Angel.gif?h=840",
         "reps":10,
         "rest_time":45,
         "desc":"Improves upper-back control and shoulder stability without equipment."
@@ -249,7 +268,8 @@
         "exercise_id":"LEG_01",
         "exercise_type":"C",
         "display_name":"Bodyweight Squats",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://hips.hearstapps.com/hmg-prod/images/whl-evergreen-2137-r-682ce60a0fc96.jpg?crop=1.00xw:0.898xh;0,0.0947xh&resize=640:*",
+        "gif_url":"https://www.inspireusafoundation.org/wp-content/uploads/2021/06/bodyweight-squat-2.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Fundamental lower-body exercise developing quadriceps, glutes, and balance."
@@ -259,7 +279,8 @@
         "exercise_id":"LEG_02",
         "exercise_type":"C",
         "display_name":"Jump Squats",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://liftmanual.com/wp-content/uploads/2023/04/jump-squat.jpg",
+        "gif_url":"https://fitnessprogramer.com/wp-content/uploads/2021/02/Jump-Squat.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Explosive squat variation that develops power and conditioning."
@@ -269,7 +290,8 @@
         "exercise_id":"LEG_03",
         "exercise_type":"C",
         "display_name":"Walking Lunges",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://trainingstation.co.uk/cdn/shop/articles/Lunges-movment_d958998d-2a9f-430e-bdea-06f1e2bcc835_900x.webp?v=1741687877",
+        "gif_url":"https://i.pinimg.com/originals/52/74/c1/5274c1584e60a6d5a05076e9b61f2bc5.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Alternating lunges that improve leg strength and coordination."
@@ -279,7 +301,8 @@
         "exercise_id":"LEG_04",
         "exercise_type":"C",
         "display_name":"Reverse Lunges",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://www.puregym.com/media/qd1jjahb/reverse-lunge.jpg?quality=80",
+        "gif_url":"https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyejBueWU1MGdtMTBsODZ6dmhqNWZzaGp6d2dreGdhNXpnbzB1NmNyZCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/r0WOepedKqxNjS3zM0/200.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Lunge variation placing less stress on the knees."
@@ -289,7 +312,8 @@
         "exercise_id":"LEG_05",
         "exercise_type":"C",
         "display_name":"Bulgarian Split Squats",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://image-tc.galaxy.tf/wijpeg-3z4q664j4hp77n464taxm3j3m/how-to-do-a-bulgarian-split-squat_standard.jpg?crop=182%2C0%2C837%2C628",
+        "gif_url":"https://fitnessprogramer.com/wp-content/uploads/2021/05/Dumbbell-Bulgarian-Split-Squat.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Single-leg exercise using a bench or step for increased difficulty."
@@ -299,7 +323,8 @@
         "exercise_id":"LEG_06",
         "exercise_type":"C",
         "display_name":"Wall Sit",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://blog.nasm.org/hubfs/walls-sits.jpg",
+        "gif_url":"https://media1.giphy.com/media/v1.Y2lkPTZjMDliOTUyODdtbDR2eTI3MGJwMTN6ZXE1ZHByc2dib3p2anVwamx5cG42Y2JmOCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/fVq9MXzZEBYEo1c9ad/200w.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Static exercise that builds quadriceps endurance and mental resilience. Mostly the second one."
@@ -309,7 +334,8 @@
         "exercise_id":"LEG_07",
         "exercise_type":"C",
         "display_name":"Step-Ups",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://cdn.shopify.com/s/files/1/0568/6280/2107/files/box_step_up_c917016e-b72a-4c20-9f70-f187fdab5b83.jpg",
+        "gif_url":"https://blog.myfitnesspal.com/wp-content/uploads/2019/07/Slow-negative-step-ups.gif",
         "reps":15,
         "rest_time":45,
         "desc":"Stepping onto a bench or stair to strengthen legs and balance."
@@ -319,7 +345,8 @@
         "exercise_id":"LEG_08",
         "exercise_type":"C",
         "display_name":"Calf-Raises",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://media.gq.com/photos/5a4fe56aefd792474cf8ce17/16:9/w_2560%2Cc_limit/2018-01_GQ_FITNESS-Ask-a-Trainer-Calfs.jpg",
+        "gif_url":"https://fitnessprogramer.com/wp-content/uploads/2021/06/Standing-Calf-Raise.gif",
         "reps":15,
         "rest_time":45,
         "desc":"Simple exercise focused on calf development and ankle stability."
@@ -329,7 +356,7 @@
         "exercise_id":"LEG_09",
         "exercise_type":"C",
         "display_name":"Single-Leg Squats (Assisted)",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://images.ctfassets.net/qw8ps43tg2ux/1PK4X208496WoLR4jBzJXr/698fbc16a99ce1f9c89c2e8a581df199/issa-single-leg-squat-straps.jpg?w=1440&q=75",
         "reps":15,
         "rest_time":45,
         "desc":"Progression toward pistol squats while improving balance and strength."
@@ -339,7 +366,8 @@
         "exercise_id":"LEG_10",
         "exercise_type":"C",
         "display_name":"Pistol Squats",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://images.contentstack.io/v3/assets/blt45c082eaf9747747/blt618ca26d5b7a5adf/5de0b636a6b4887f3f47ad63/Pistol_head_cut.jpg?format=pjpg&auto=webp&quality=76&width=1232",
+        "gif_url":"https://media4.giphy.com/media/v1.Y2lkPTZjMDliOTUyd2ZqY3Uyb3I1cWRoYzhkdmkwNWo4NGFxYWZqOWN2NjNtZnc3MXB6NiZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xUPGcJGpd7ALzeLUOY/giphy.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Advanced unilateral squat requiring strength, flexibility, and control."
@@ -349,7 +377,8 @@
         "exercise_id":"LEG_11",
         "exercise_type":"C",
         "display_name":"Glute Bridges",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://xcelerategyms.com/wp-content/uploads/2026/02/image4-103.jpg",
+        "gif_url":"https://fitnessprogramer.com/wp-content/uploads/2021/02/Glute-Bridge-.gif",
         "reps":3,
         "rest_time":45,
         "desc":"Targets glutes and hamstrings while improving hip stability."
@@ -359,7 +388,8 @@
         "exercise_id":"LEG_12",
         "exercise_type":"C",
         "display_name":"Broad Jumps",
-        "thumb_url":"https://images.pexels.com/photos/4775232/pexels-photo-4775232.jpeg",
+        "thumb_url":"https://fitnessprogramer.com/wp-content/uploads/2021/02/Glute-Bridge-.gif",
+        "gif_url":"https://i.makeagif.com/media/12-19-2016/pTyMFD.gif",
         "reps":12,
         "rest_time":45,
         "desc":"Explosive lower-body movement developing power and athleticism."
