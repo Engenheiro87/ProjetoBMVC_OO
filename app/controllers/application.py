@@ -142,8 +142,10 @@ class UserService:
         self.__data_model = data_model;
 
     def register_user(self, **properties):
-        if self.__data_model.get_user(properties["email"], properties["password"]):
+        if self.__data_model.get_user_from_email(properties["email"]):
             return False;
+        # if self.__data_model.get_user(properties["email"], properties["password"]):
+            # return False;
         self.__data_model.book(UserAccount(properties));
 
 class WorkoutService():

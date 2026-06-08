@@ -196,11 +196,63 @@
         ]
     },
     {
-        "name": "AnyName",
-        "password": "anyname123",
-        "email": "henriquecatharino7@gmail.com",
+        "name": "Different",
+        "password": "different",
+        "email": "different@gmail.com",
         "gender": "female",
-        "accountID": "234078cd-1c0f-40eb-8a82-1a812671e8f7",
-        "workouts": []
+        "accountID": "069386d3-1d75-41eb-9a91-cfe785460e05",
+        "workouts": [
+            {
+                "workout_class": "A",
+                "creatorID": "069386d3-1d75-41eb-9a91-cfe785460e05",
+                "days": [
+                    2,
+                    4
+                ],
+                "exercises": [
+                    {
+                        "unique_id": "4df3d966-5524-405f-9f82-722da6f6a636",
+                        "exercise_id": "PUSH_01",
+                        "last_completed": null,
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "07f4c27f-a89c-48bd-a321-ef4ae69f59cf",
+                        "exercise_id": "PUSH_02",
+                        "last_completed": null,
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "9112cfa6-e606-4e2a-9a6d-7c4bfa175fff",
+                        "exercise_id": "PUSH_04",
+                        "last_completed": null,
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "db5502a9-f3b9-4db9-b0d6-609dbb040550",
+                        "exercise_id": "PUSH_03",
+                        "last_completed": null,
+                        "info": {
+                            "reps": 15
+                        }
+                    },
+                    {
+                        "unique_id": "b938a609-48a4-4dcd-9c88-bdd3b9e08c18",
+                        "exercise_id": "PUSH_07",
+                        "last_completed": null,
+                        "info": {
+                            "reps": 3
+                        }
+                    }
+                ],
+                "unique_id": "efc75914-8a76-4d0e-a1ff-aa122d177746"
+            }
+        ]
     }
 ]

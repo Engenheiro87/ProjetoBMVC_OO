@@ -135,6 +135,11 @@ class DataRecord():
                 self.__authenticated_users[session_id]=user;
                 return session_id;
 
+    def get_user_from_email(self, email:str)->UserAccount|None:
+        for user in self.__user_accounts:
+            if user.email == email:
+                return user;
+
     def get_user(self, email:str, password:str)->UserAccount:
         for user in self.__user_accounts:
             if user.compare(email, password)!=None:
