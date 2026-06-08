@@ -99,6 +99,35 @@ def create_workout():
         "error":error or None,
     }
 
+@app.route("/delete_workout", method="POST")
+def delete_workout():
+    payload = request.json;
+    sucess, error = ctl.get_service("WorkoutService").delete_workout(ctl.get_session_id(), payload);
+    return {
+        "sucess":sucess,
+        "error":error
+    };
+
+@app.route("/workout_view", method="GET")
+@app.route("/workout_view/<workout_id>", method="GET")
+def workout_view(workout_id=None):
+    if not workout_id:
+        print(Fore.RED+"No workout_id given.");
+        return redirect("/profile");
+    if not ctl.is_authenticated():
+        print(Fore.RED+"Nobody logged in.");
+        return redirect("/login");
+    return ctl.render("workout_view", parameter=workout_id);
+
+@app.route("/mark_workout_done", method="POST")
+def mark_exercise_done():
+    payload = request.json;
+    sucess, error = ctl.get_service("WorkoutService").complete_exercise(ctl.get_session_id(), payload);
+    return {
+        "sucess":sucess,
+        "error":error
+    };
+
 # OLD
 @app.route("/portal", method="POST")
 def action_portal():

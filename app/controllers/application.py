@@ -2,9 +2,10 @@ from bottle import template, redirect, request;
 from app.controllers.datarecord import DataRecord;
 from colorama import init, Fore, Style
 from uuid import uuid4;
+from datetime import datetime;
 
 from app.models.user_account import UserAccount;
-from app.models.workout import Workout, ExerciseUser;
+from app.models.workout import Workout;
 
 init(autoreset=True);
 class Application():
@@ -15,6 +16,7 @@ class Application():
             "login":self.login,
             "profile":self.profile,
             "workout_creation":self.workout_creation,
+            "workout_view": self.workout_view,
 
             # errors
             "error":self.error_call,
@@ -48,6 +50,14 @@ class Application():
         return self.__authenticated_users.get(session_id, None);
 
     # PAGES
+    def workout_view(self, workout_id:str):
+        user:UserAccount = self.__authenticated_users[self.get_session_id()];
+        workout = user.get_workout_from_id(workout_id);
+        return template(
+            "app/views/html/workout_view/workout",
+            workout=workout,
+        );
+
     def workout_creation(self):
         return template(
             "app/views/html/workout_creation/work",
@@ -141,6 +151,24 @@ class WorkoutService():
         self.__data_model = data_model;
         self.__app = app;
 
+    def complete_exercise(self, session_id:str, payload:dict):
+        if (not "exercise_id" in payload) or (not "workout_id" in payload):
+            return False, f"No exercise/workout id given. Payload = {payload}";
+        # getting user
+        user = self.__app.from_session_id(session_id);
+
+        # getting IDs
+        workout_id:str = payload["workout_id"];
+        exercise_id:str = payload["exercise_id"];
+
+        # getting workout and exercise
+        workout:Workout = user.get_workout_from_id(workout_id);
+        exercise = workout.get_exercise(exercise_id);
+
+        exercise.last_completed = datetime.now();
+        self.__data_model.save();
+        return True, None;
+
     def create_workout(self, session_id:str, payload:dict):
         user = self.__app.from_session_id(session_id);
         if not user:
@@ -154,10 +182,21 @@ class WorkoutService():
                 "creatorID":user.accountID,
                 "exercises": self.parse_exercise_list(payload["exercises"]),
                 "days":payload["days"],
+                "unique_id":str(uuid4()),
             }
         );
         user.add_workout(workout);
         self.__data_model.save();
+        return True, None;
+
+    def delete_workout(self, session_id:str, payload:dict):
+        user = self.__app.from_session_id(session_id);
+        if not user:
+            return False, "Couldn't find this user.";
+        if not payload:
+            return False, "No payload sent.";
+        workout_id = payload["workout_id"];
+        self.__data_model.delete_workout(user, workout_id);
         return True, None;
     
     def parse_exercise_list(self, exercise_dict:dict)->list:
