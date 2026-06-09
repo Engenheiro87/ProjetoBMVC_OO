@@ -1,5 +1,5 @@
 from bottle import template, redirect, request;
-from app.controllers.datarecord import DataRecord;
+from app.controllers.datarecord import DataRecord, SecurityService;
 from colorama import init, Fore, Style
 from uuid import uuid4;
 from datetime import datetime;
@@ -146,9 +146,14 @@ class UserService:
             return False;
         # if self.__data_model.get_user(properties["email"], properties["password"]):
             # return False;
+
+        password = properties["password"];
+        hashed, salt = SecurityService.hash_string(password);
+        properties.update({"password":hashed});
+        properties["salt"] = salt;
         self.__data_model.book(UserAccount(properties));
 
-class WorkoutService():
+class WorkoutService:
     def __init__(self, data_model:DataRecord, app:Application):
         self.__data_model = data_model;
         self.__app = app;

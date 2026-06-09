@@ -4,6 +4,7 @@ class UserAccount:
         self.password = data["password"];
         self.email = data["email"];
         self.gender = data["gender"];
+        self.__salt = data["salt"];
         self.__accountID = data["accountID"];
         self.__workouts = data.get("workouts", []);
     
@@ -21,6 +22,10 @@ Workout1: {self.workouts[0]};
     def compare(self, email:str, password:str)->UserAccount|None:
         if email == self.email and password == self.password:
             return self;
+
+    @property
+    def salt(self):
+        return self.__salt;
 
     @property
     def accountID(self)->str:

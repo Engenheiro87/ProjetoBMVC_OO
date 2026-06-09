@@ -2,10 +2,12 @@ from app.models.user_account import UserAccount
 from app.models.workout import ExerciseTemplate, ExerciseUser, Workout;
 from app.models.constraints import DAY_FORMAT1;
 from datetime import datetime;
+from uuid import uuid4;
 import json;
 import uuid;
 
 class DataRecord():
+
     """Banco de dados JSON para o recurso Usuários"""
 
     def __init__(self):
@@ -106,6 +108,7 @@ class DataRecord():
         return {
             "name": user.name,
             "password": user.password,
+            "salt":user.salt,
             "email": user.email,
             "gender": user.gender,
             "accountID":user.accountID,
@@ -141,8 +144,11 @@ class DataRecord():
                 return user;
 
     def get_user(self, email:str, password:str)->UserAccount:
+        from_email = self.get_user_from_email(email);
+        salt = from_email.salt;
+        hashed, salt = SecurityService.hash_string(password, salt);
         for user in self.__user_accounts:
-            if user.compare(email, password)!=None:
+            if user.compare(email, hashed)!=None:
                 return user;
 
     def logout(self, session_id):
@@ -156,3 +162,15 @@ class DataRecord():
                 return self.user_accounts[index]
         except (ValueError, IndexError):
             return None  # Tratamento de erro se o índice for inválido 
+        
+class SecurityService:
+    @staticmethod
+    def hash_string(string:str, salt:str=None):
+        salt = salt or str(uuid4());
+        string+=salt;
+        hashed = 0;
+
+        for char in string:
+            hashed += hashed*31 + ord(char);
+        
+        return hashed, salt;

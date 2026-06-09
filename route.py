@@ -48,8 +48,8 @@ def do_signup():
     gender = request.forms.get("gender");
     result = ctl.get_service("UserService").register_user(name=name, email=email, password=password, gender=gender, workouts=[], accountID=str(uuid4()));
     if result == False:
-        return signup(note="Invalid email / password.");
-    ctl.do_logout();#Makes sure you're not redirected back to home in an already logged in account.
+        return signup(note="Already used email.");
+    ctl.do_logout(); # Makes sure you're not redirected back to home in an already logged in account.
     redirect("/login");
 
 #LOG IN
