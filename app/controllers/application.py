@@ -172,7 +172,6 @@ class UserService:
         hashed, salt = SecurityService.hash_string(password);
         properties.update({"password":hashed});
         properties["salt"] = salt;
-        print(f"Registering user with data = {properties}");
         self.__data_model.book(UserAccount(properties));
         return True, "Sucess";
 

@@ -3,6 +3,7 @@ from app.models.workout import ExerciseTemplate, ExerciseUser, Workout;
 from app.models.constraints import DAY_FORMAT1;
 from datetime import datetime;
 from uuid import uuid4;
+from os import path;
 import json;
 import uuid;
 
@@ -18,19 +19,20 @@ class DataRecord():
         self.read();
         
     def read(self):
-        try:
-            # READING EXERCISES
-            with open("app/controllers/db/exercises.json", "r", encoding="utf-8") as exercises_json:
-                exercise_data = json.load(exercises_json);
-                self.__exercises = {data["exercise_id"]:ExerciseTemplate(data) for data in exercise_data};
-
+        path_users = "app/controllers/db/user_accounts.json";
+        # READING EXERCISES
+        with open("app/controllers/db/exercises.json", "r", encoding="utf-8") as exercises_json:
+            exercise_data = json.load(exercises_json);
+            self.__exercises = {data["exercise_id"]:ExerciseTemplate(data) for data in exercise_data};
+        
+        if path.exists(path_users):
             # READING USERS
-            with open("app/controllers/db/user_accounts.json", "r", encoding="utf-8") as arquivo_json:
+            with open(path_users, "r", encoding="utf-8") as arquivo_json:
                 user_data = json.load(arquivo_json)
                 self.__user_accounts = [UserAccount(self.read_user_data(data)) for data in user_data];
 
-        except FileNotFoundError:
-            with open("app/controllers/db/user_accounts.json", "w", encoding="utf-8") as arquivo_json:
+        else:
+            with open(path_users, "w", encoding="utf-8") as arquivo_json:
                 json.dump([], arquivo_json, indent=4);
             return self.read();
 
@@ -143,8 +145,10 @@ class DataRecord():
             if user.email == email:
                 return user;
 
-    def get_user(self, email:str, password:str)->UserAccount:
+    def get_user(self, email:str, password:str)->UserAccount|None:
         from_email = self.get_user_from_email(email);
+        if not from_email:
+            return;
         salt = from_email.salt;
         hashed, salt = SecurityService.hash_string(password, salt);
         for user in self.__user_accounts:
