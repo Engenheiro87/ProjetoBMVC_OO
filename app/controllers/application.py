@@ -141,17 +141,52 @@ class UserService:
     def __init__(self, data_model:DataRecord):
         self.__data_model = data_model;
 
-    def register_user(self, **properties):
+    def register_user(self, **properties)->tuple:
         if self.__data_model.get_user_from_email(properties["email"]):
-            return False;
+            return False, "Already used email.";
         # if self.__data_model.get_user(properties["email"], properties["password"]):
             # return False;
+
+        # sanity checking data.
+        for data_name, data in properties.items():
+            checker = UserService.REQUIREMENTS.get(data_name);
+            if not checker:
+                continue;
+            result = checker(data);
+            if type(result) == str:
+                print(Fore.RED+f"ERROR SIGNING UP: {result}");
+                return False, result;
 
         password = properties["password"];
         hashed, salt = SecurityService.hash_string(password);
         properties.update({"password":hashed});
         properties["salt"] = salt;
+        print(f"Registering user with data = {properties}");
         self.__data_model.book(UserAccount(properties));
+        return True, "Sucess";
+
+    @staticmethod
+    def __check_name(name:str)->bool:
+        return (type(name)==str and len(name)>=1) or "Invalid name";
+
+    @staticmethod
+    def __check_email(email:str)->bool:
+        return (type(email)==str and ("@" in email)) or "Invalid email";
+
+    @staticmethod
+    def __check_password(password_input:str)->bool:
+        return (type(password_input)==str and len(password_input)>=8) or "Invalid password";
+
+    @staticmethod
+    def __check_gender(gender:str)->bool:
+        return (type(gender)==str and (gender=="male" or gender=="female")) or "Invalid gender.";
+
+    REQUIREMENTS = {
+        "name":__check_name,
+        "email":__check_email,
+        "password":__check_password,
+        "gender":__check_gender,
+    };
 
 class WorkoutService:
     def __init__(self, data_model:DataRecord, app:Application):
@@ -182,7 +217,14 @@ class WorkoutService:
             return False, "Couldn't find this user.";
         if not payload:
             return False, "No payload sent.";
+
+        result, note = self.check_workout(payload);
+        if result == False:
+            return False, note;
+
         workout_class = self.get_class_from_json(payload["exercises"]);
+        if not workout_class:
+            return False, "Error parsing workout class.";
         workout = self.__data_model.create_workout_from_json(
             {
                 "workout_class":workout_class,
@@ -194,6 +236,25 @@ class WorkoutService:
         );
         user.add_workout(workout);
         self.__data_model.save();
+        return True, None;
+
+    def check_workout(self, payload:dict)->tuple:
+        days = payload["days"];
+        exercises = payload["exercises"];
+        if not days or not exercises:
+            return False, "Missing data.";
+        
+        if not (type(days)==list and len(days)>=1):
+            return False, "Invalid days";
+
+        if not (type(exercises)==dict and len(exercises)>=1):
+            return False, "Invalid exercises";
+
+        for exercise_id, exercise_data in exercises.items():
+            exercise_template = self.__data_model.get_exercise_template(exercise_id);
+            if not exercise_template:
+                return False, f"Invalid exercise_id \"{exercise_id}\"";
+
         return True, None;
 
     def delete_workout(self, session_id:str, payload:dict):
@@ -221,8 +282,11 @@ class WorkoutService:
 
     def get_class_from_json(self, json_exercises:dict)->str:
         last_type = None;
-        for exercise in json_exercises.values():
-            my_type = exercise["exercise_type"];
+        for exercise_id in json_exercises.keys():
+            exercise_template = self.__data_model.get_exercise_template(exercise_id);
+            my_type = exercise_template.exercise_type;
+            if not my_type:
+                return None;
             if not last_type:
                 last_type = my_type;
                 continue;

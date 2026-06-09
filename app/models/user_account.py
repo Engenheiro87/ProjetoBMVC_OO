@@ -53,6 +53,7 @@ Workout1: {self.workouts[0]};
         return {
             "name":self.name,
             "password":self.password,
+            "salt":self.salt,
             "email":self.email,
             "gender":self.gender,
             "accountID":self.__accountID,

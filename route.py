@@ -46,9 +46,9 @@ def do_signup():
     email = request.forms.get("email_box");
     password = request.forms.get("password_box");
     gender = request.forms.get("gender");
-    result = ctl.get_service("UserService").register_user(name=name, email=email, password=password, gender=gender, workouts=[], accountID=str(uuid4()));
+    result, note = ctl.get_service("UserService").register_user(name=name, email=email, password=password, gender=gender, workouts=[], accountID=str(uuid4()));
     if result == False:
-        return signup(note="Already used email.");
+        return signup(note=note);
     ctl.do_logout(); # Makes sure you're not redirected back to home in an already logged in account.
     redirect("/login");
 
@@ -94,6 +94,8 @@ def workout_creation():
 def create_workout():
     payload = request.json;
     sucess, error = ctl.get_service("WorkoutService").create_workout(ctl.get_session_id(), payload);
+    if not sucess:
+        print(Fore.RED+f"Error: {error}");
     return {
         "sucess":sucess,
         "error":error or None,
