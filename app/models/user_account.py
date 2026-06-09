@@ -60,3 +60,5 @@ Workout1: {self.workouts[0]};
             "workouts":self.pack_workouts()
         };
 
+    def get_workouts_by_day(self, day_number)->list:
+        return [workout for workout in self.__workouts if day_number in workout.days];

@@ -62,7 +62,7 @@ class DataRecord():
                     self.convert_to_datetime(exercise.get("last_completed", None)),
                     exercise["info"]
                 )
-                for exercise in json["exercises"]
+                for exercise in json["exercises"] if self.get_exercise_template(exercise["exercise_id"])
             ],
             days = json["days"],
             unique_id= json["unique_id"]

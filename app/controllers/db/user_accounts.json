@@ -51,6 +51,25 @@
                     }
                 ],
                 "unique_id": "79239885-297e-4907-9af0-db57c332e63b"
+            },
+            {
+                "workout_class": "A",
+                "creatorID": "e23862f2-8048-4c3b-bbaf-b3ade947a165",
+                "days": [
+                    0,
+                    6
+                ],
+                "exercises": [
+                    {
+                        "unique_id": "10a0c93c-97bb-49f2-832b-99f1e3113fdf",
+                        "exercise_id": "PUSH_01",
+                        "last_completed": null,
+                        "info": {
+                            "reps": 10
+                        }
+                    }
+                ],
+                "unique_id": "59a07892-cd68-4c30-a063-56e20270d987"
             }
         ]
     }

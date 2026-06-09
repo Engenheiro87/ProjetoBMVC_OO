@@ -27,6 +27,16 @@ class Application():
 
         self.__current_loginusername = None;
         self.__current_username = None;
+
+        self.weekdays = {
+            0:"SUN",
+            1:"MON",
+            2:"TUE",
+            3:"WED",
+            4:"THU",
+            5:"FRI",
+            6:"SAT"
+        };
     
         self.services = {
             "UserService":UserService(data_model=self.__model),
@@ -59,13 +69,14 @@ class Application():
         );
 
     def workout_creation(self):
+        user:UserAccount = self.__authenticated_users[self.get_session_id()];
         return template(
             "app/views/html/workout_creation/work",
             exercise_templates={
                 workout_class:self.__model.get_templates_by_class(workout_class) 
                 for workout_class in Workout.LIBRARY.keys()
             },
-            week_days = ("SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"),
+            week_days = {day_number:day_name for day_number, day_name in self.weekdays.items() if len(user.get_workouts_by_day(day_number))<=0},
             );
 
     def error_call(self, payload:dict):
@@ -86,7 +97,7 @@ class Application():
             "app/views/html/profile_page/profile",
             name=str.capitalize(user.name),
             nick = str.capitalize(user.name.split()[0]),
-            workouts = user.workouts,
+            workouts = [workout for workout in user.workouts if len(workout.exercises)>0],
         )
 
     def pagina(self, username=None):
@@ -235,7 +246,7 @@ User ID: {user.accountID} ;
         if not payload:
             return False, "No payload sent.";
 
-        result, note = self.check_workout(payload);
+        result, note = self.check_workout(user, payload);
         if result == False:
             return False, note;
 
@@ -255,7 +266,7 @@ User ID: {user.accountID} ;
         self.__data_model.save();
         return True, None;
 
-    def check_workout(self, payload:dict)->tuple:
+    def check_workout(self, user:UserAccount, payload:dict)->tuple:
         days = payload["days"];
         exercises = payload["exercises"];
         if not days or not exercises:
@@ -266,6 +277,10 @@ User ID: {user.accountID} ;
 
         if not (type(exercises)==dict and len(exercises)>=1):
             return False, "Invalid exercises";
+    
+        for day in days:
+            if len(user.get_workouts_by_day(day))>0:
+                return False, "Invalid days (already used day.)";
 
         for exercise_id, exercise_data in exercises.items():
             exercise_template = self.__data_model.get_exercise_template(exercise_id);

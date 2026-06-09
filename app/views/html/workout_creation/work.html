@@ -84,8 +84,8 @@
     <p style="margin-left: 15px;"><strong>NOTE: </strong>You can only select up to <strong>2</strong> non-consecutive days per workout. Each muscle group needs at least 48 hours to fully recover.</p>
     <br>
     <div class="wc-day-grid">
-        % for i in range(len(week_days)):
-        <button data-day="{{i}}" class="wc-weekday-btn">{{week_days[i]}}</button>
+        % for day_num, day_name in week_days.items():
+        <button data-day="{{day_num}}" class="wc-weekday-btn">{{day_name}}</button>
         % end
     </div>
     <br>
