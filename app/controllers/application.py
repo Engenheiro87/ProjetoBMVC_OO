@@ -266,10 +266,10 @@ User ID: {user.accountID} ;
         return True, None;
 
     def check_workout(self, user:UserAccount, payload:dict)->tuple:
+        if not ("days" in payload and "exercises" in payload):
+            return False, "Missing data.";
         days = payload["days"];
         exercises = payload["exercises"];
-        if not days or not exercises:
-            return False, "Missing data.";
         
         if not (type(days)==list and len(days)>=1):
             return False, "Invalid days";
