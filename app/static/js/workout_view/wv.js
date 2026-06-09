@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function(){
             if (working_timers[exercise_id]){
                 kill_timer();
             }
-            else {
+            else if ( Object.keys(working_timers).length<=0) { // Not allowed to play two timers at once.
                 stop_alarm();
                 working_timers[exercise_id] =
                     setInterval(function(){
