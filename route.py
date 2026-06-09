@@ -125,6 +125,9 @@ def workout_view(workout_id=None):
 def mark_exercise_done():
     payload = request.json;
     sucess, error = ctl.get_service("WorkoutService").complete_exercise(ctl.get_session_id(), payload);
+    if not sucess:
+        print(Fore.RED+f"Error: {error}");
+        return redirect("/login");
     return {
         "sucess":sucess,
         "error":error

@@ -198,6 +198,8 @@ class WorkoutService:
             return False, f"No exercise/workout id given. Payload = {payload}";
         # getting user
         user = self.__app.from_session_id(session_id);
+        if not user:
+            return False, "No user found.";
 
         # getting IDs
         workout_id:str = payload["workout_id"];
@@ -205,8 +207,23 @@ class WorkoutService:
 
         # getting workout and exercise
         workout:Workout = user.get_workout_from_id(workout_id);
-        exercise = workout.get_exercise(exercise_id);
+        if not workout:
+            return False, f"""
+Could not find workout.
+Workout ID: {workout_id} ;
+User ID: {user.accountID} ;
+""";
 
+        exercise = workout.get_exercise(exercise_id);
+        if not exercise:
+            return False, f"""
+Could not find exercise.
+Exercise ID: {exercise_id} ;
+User ID: {user.accountID} ;
+""";
+    
+        if not exercise.is_available:
+            return False, "Exercise isn't available (48H cooldown).";
         exercise.last_completed = datetime.now();
         self.__data_model.save();
         return True, None;

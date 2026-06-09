@@ -25,6 +25,32 @@
                     }
                 ],
                 "unique_id": "ac31f38c-dfa4-43e7-98e3-2f44ac55115a"
+            },
+            {
+                "workout_class": "M",
+                "creatorID": "e23862f2-8048-4c3b-bbaf-b3ade947a165",
+                "days": [
+                    5
+                ],
+                "exercises": [
+                    {
+                        "unique_id": "dd49a90f-54d2-4a28-a5fb-92605f0ecc3b",
+                        "exercise_id": "PULL_06",
+                        "last_completed": "2026-06-09 09-29-52",
+                        "info": {
+                            "reps": 10
+                        }
+                    },
+                    {
+                        "unique_id": "2fbb48a0-8825-40a8-ab3f-08a0f16158e2",
+                        "exercise_id": "LEG_03",
+                        "last_completed": "2026-06-09 09-30-49",
+                        "info": {
+                            "reps": 12
+                        }
+                    }
+                ],
+                "unique_id": "79239885-297e-4907-9af0-db57c332e63b"
             }
         ]
     }

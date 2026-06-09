@@ -176,6 +176,8 @@ class ExerciseUser(Exercise):
 
     @last_completed.setter
     def last_completed(self, new_value:datetime):
+        if not self.is_available:
+            return;
         self.__last_completed = new_value;
 
     @property
